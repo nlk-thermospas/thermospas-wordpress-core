@@ -1,0 +1,40 @@
+.media-list { margin: 20px 0 0 0; padding: 0; list-style: none; }
+.media-list li {
+    display: inline-block;
+    margin: 0 0 0 6px;
+    width: 31%;
+    vertical-align: top;
+    background: none;
+    text-align: center;
+}
+#media-box {
+    margin: 0 auto 55px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 24px 25px 30px 25px;
+    width: 100%;
+    background: #e8e8e8;
+}
+.download-content { color: #0B58B4; font-weight: bold; text-align: center; }
+
+
+@media only screen and (max-width : 700px) {
+.media-list li {
+    width: 100%;
+    text-align: left;
+ margin: 10px 0;
+}
+.media-list li img {
+    width: 35%;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width : 645px) {
+.media-list li {
+    	font-size: .9em;
+}
+.media-list li img {
+    width: 25%;
+}
+}

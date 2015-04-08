@@ -1,0 +1,33 @@
+article {}
+article h2 {}
+article h2 a {}
+article p.date {}
+article p {}
+article p.read-more {}
+article a {}
+
+.pagination {
+	display: block;
+	float: left;
+	width: 770px;
+	margin: 45px 0px 0px 0px;
+}
+.pagination p {
+	display: block;
+	float: right;
+	width: 50%;
+	font: 600 14px/14px "Open Sans", sans-serif;
+	color: #6E6E6E;
+}
+.pagination p.nav-previous {
+	text-align: right;
+}
+.pagination p.nav-next {
+
+}
+.pagination p a {
+	color: #61AEE0;
+}
+.pagination p a:hover {
+	color: #317EB0;
+}

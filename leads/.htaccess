@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Leads"
+AuthUserFile /var/www/vhosts/thermospas.com/httpdocs/leads/.htpasswd
+Require valid-user

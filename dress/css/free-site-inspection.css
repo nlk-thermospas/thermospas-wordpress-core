@@ -1,0 +1,401 @@
+.container {
+	background: #fff none;
+}
+.primary {
+	width: 52%;
+}
+article {
+	width: 100%;
+	margin: 0px;
+	padding: 40px 65px 0px 65px;
+}
+
+.introduction {
+	font: 300 18px/22px "Open Sans", sans-serif;
+	color: #6e6e6e;
+}
+
+.testimonial {
+	display: block;
+	float: left;
+	width: 235px;
+	margin-right: 30px;
+	margin-top: 30px;
+}
+.testimonial:last-of-type {
+	margin-right: 0px;
+}
+.testimonial .content {
+	display: block;
+	float: left;
+	width: 100%;
+	background: #f1f1f1;
+}
+.testimonial .content p {
+	padding: 20px;
+	margin: 0px;
+	font: 400 13px/22px "Open Sans", sans-serif;
+	font-style: italic;
+	color: #00539A;
+	position: relative;
+}
+.testimonial .content p::after {
+	position: absolute;
+	left: 40px;
+	bottom: -10px;
+	content: " ";
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #f1f1f1;
+}
+.testimonial .person {
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 35px;
+	margin-top: 15px;
+	background: url(../global/testimonial-head-dark.png) no-repeat left top;
+	background-size: contain;
+}
+.testimonial .person p {
+	margin: 3px 0px 0px 40%;
+	font: 400 13px/16px "Open Sans", sans-serif;
+	color: #6e6e6e;
+}
+
+.secondary {
+	width: 48%;
+	background: white;
+}
+.secondary .gform_wrapper,
+.secondary #gforms_confirmation_message {
+	display: block;
+	width: 525px;
+	background: #dce8f3;
+	margin-top: 40px;
+	padding: 0px 66px 20px 66px;
+}
+.secondary .gform_confirmation_wrapper,
+.secondary .gform_confirmation_wrapper div {
+	background: transparent;
+	font: 400 13px/15px "Open Sans", sans-serif;
+	color: #6e6e6e;
+	clear: both;
+	text-align: left;
+}
+.secondary .gform_confirmation_wrapper {
+	display: block;
+	background: none repeat scroll 0% 0% #DCE8F3;
+	float: left;
+	width: 525px;
+}
+.secondary .gform_confirmation_wrapper div {
+	text-align: center;
+	padding: 30px 0px 0px 0px;
+}
+.secondary .gform_wrapper h3 {
+	font: 600 28px/34px "Open Sans", sans-serif;
+	color: #00539A;
+}
+.secondary .gform_wrapper span {
+	font: 400 13px/15px "Open Sans", sans-serif;
+	margin-bottom: 15px;
+}
+.secondary .gform_wrapper p,
+.secondary .gform_wrapper ul {
+	font: 400 13px/15px "Open Sans", sans-serif;
+	color: #6e6e6e;
+	clear: both;
+}
+.secondary .gform_wrapper p {
+	margin-left: 20px;
+}
+.secondary .gform_wrapper .gform_body ul ul {
+	list-style-type: disc;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+.secondary .gform_wrapper .gform_body ul ul li {
+	display: list-item;
+}
+.secondary .gform_wrapper form input[type=submit] {
+	padding: 20px 0px;
+	width: 45%;
+	font-size: 18px;
+}
+.secondary .privacy {
+	display: block;
+	float: left;
+	width: 525px;
+	background: #dce8f3;
+}
+.secondary .privacy p {
+	text-align: center;
+	font: 400 10px/10px "Open Sans", sans-serif;
+	margin: 10px 0px 20px 0px;
+}
+.secondary .privacy p a {
+	color: #61AEE0;
+}
+.secondary .privacy p a:hover {
+	color: #317EB0;
+}
+
+/** Gravity Form **/
+
+#field_4_2, #field_4_8, #field_4_11 {width: 89%;}
+#field_4_3 {width: 55%; margin: 0px 2% 0px 0px; }
+#field_4_4 {width: 32%;}
+#field_4_6 {width: 32%; margin: 0px 2% 0px 0px; }
+#field_4_9 {width: 43%; margin-right: 2%;}
+#field_4_12 {width: 55%; }
+#field_4_13 {width: 43%;}
+
+.ui-datepicker {
+	width: 17em;
+	padding: .2em .2em 0;
+	display: none;
+	background: #f1f1f1;
+-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.4);
+-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.4);
+box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.4);
+border-radius: 5px;
+}
+.ui-datepicker .ui-datepicker-header {
+	position: relative;
+	padding: .2em 0;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+	position: absolute;
+	top: 7px;
+	width: 1.8em;
+	height: 1.8em;
+	font-size: 10px;
+}
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+	top: 7px;
+}
+.ui-datepicker .ui-datepicker-prev {
+	left: 5px;
+}
+.ui-datepicker .ui-datepicker-next {
+	right: 12px;
+}
+.ui-datepicker .ui-datepicker-prev-hover {
+	left: 5px;
+}
+.ui-datepicker .ui-datepicker-next-hover {
+	right: 12px;
+}
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	margin-left: -8px;
+	top: 50%;
+	margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+	margin: 0 2.3em;
+	line-height: 1.8em;
+	text-align: center;
+}
+.ui-datepicker .ui-datepicker-title select {
+	font-size: 1em;
+	margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+	width: 45%;
+}
+.ui-datepicker table {
+	width: 100%;
+	font-size: .9em;
+	border-collapse: collapse;
+	margin: 0 0 .4em;
+}
+.ui-datepicker th {
+	padding: .7em .3em;
+	text-align: center;
+	font-weight: bold;
+	border: 0;
+}
+.ui-datepicker td {
+	border: 0;
+	padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+	display: block;
+	padding: 0;
+	text-align: center;
+	text-decoration: none;
+	color: #00539A;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+	background-image: none;
+	margin: .7em 0 0 0;
+	padding: 0 .2em;
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+	float: right;
+	margin: .5em .2em .4em;
+	cursor: pointer;
+	padding: .2em .6em .3em .6em;
+	width: auto;
+	overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+	float: left;
+}
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi {
+	width: auto;
+}
+.ui-datepicker-multi .ui-datepicker-group {
+	float: left;
+}
+.ui-datepicker-multi .ui-datepicker-group table {
+	width: 95%;
+	margin: 0 auto .4em;
+}
+.ui-datepicker-multi-2 .ui-datepicker-group {
+	width: 50%;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+	width: 33.3%;
+}
+.ui-datepicker-multi-4 .ui-datepicker-group {
+	width: 25%;
+}
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+	border-left-width: 0;
+}
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+	clear: left;
+}
+.ui-datepicker-row-break {
+	clear: both;
+	width: 100%;
+	font-size: 0;
+}
+
+/* RTL support */
+.ui-datepicker-rtl {
+	direction: rtl;
+}
+.ui-datepicker-rtl .ui-datepicker-prev {
+	right: 2px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next {
+	left: 2px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+	right: 1px;
+	left: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+	left: 1px;
+	right: auto;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+	clear: right;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+	float: left;
+}
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current,
+.ui-datepicker-rtl .ui-datepicker-group {
+	float: right;
+}
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header,
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+	border-right-width: 0;
+	border-left-width: 1px;
+}
+
+
+.left-element {
+	float: left;
+	margin: 20px 0px 20px 0px;
+}
+.right-element {
+	float: right;
+	margin: 20px 0 0 0;
+}
+
+
+@media only screen and (max-width : 1219px) {
+	ul.right-element {
+		float: left;
+		margin: 0 0 20px 0;
+	}
+	.testimonial {
+		width: 46%;
+	}
+	.secondary .gform_wrapper, .secondary .gform_confirmation_wrapper {
+ {
+		width: 425px;
+	}
+	.secondary .privacy {
+		width: 425px;
+	}
+	.secondary .gform_wrapper form input[type=submit] {
+		width: 55%;
+	}
+}
+
+@media only screen and (max-width : 1024px) {
+	article {
+		padding: 40px 30px 0px 30px;
+	}
+	.secondary .gform_wrapper, .secondary .gform_confirmation_wrapper {
+		width: 90%;
+		padding: 0px 33px 20px 33px;
+	}
+	.secondary .privacy {
+		width: 90%;
+	}
+	.secondary .gform_wrapper form input[type=submit] {
+		width: 85%;
+	}
+	#field_4_9 {width: 90%; margin-right: 0%;}
+	#field_4_13 {width: 90%;}
+	.testimonial {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width : 640px) {
+	.primary {
+		width: 100%;
+	}
+	article {
+		padding: 40px 20px 0px 10px;
+	}
+	.secondary {
+		width: 100%;
+	}
+	.secondary .gform_wrapper, .secondary .gform_confirmation_wrapper {
+		margin-left: 5%;
+	}
+	.secondary .privacy {
+		margin-left: 5%;
+	}
+}
+
+@media only screen and (max-width : 321px) {
+
+}

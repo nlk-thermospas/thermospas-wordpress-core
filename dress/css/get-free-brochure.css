@@ -1,0 +1,300 @@
+.container {
+	background: #fff none;
+}
+.primary {
+	width: 52%;
+}
+article {
+	width: 100%;
+	margin: 0px;
+	padding: 40px 65px 0px 65px;
+}
+
+.introduction {
+	font: 300 18px/22px "Open Sans", sans-serif;
+	color: #6e6e6e;
+}
+
+.secondary {
+	width: 48%;
+	background: white;
+}
+.secondary .image {
+	display: block;
+	float: left;
+	width: 525px;
+	height: 200px;
+	background: #dce8f3;
+	margin-top: 80px;
+}
+.secondary .image img {
+	display: block;
+	margin: auto;
+	height: 280px;
+	position: relative;
+	top: -60px;
+}
+.secondary .gform_wrapper,
+.secondary #gforms_confirmation_message {
+	display: block;
+	float: left;
+	width: 525px;
+	background: #dce8f3;
+	padding: 0px 56px 20px 56px;
+}
+.secondary .gform_confirmation_wrapper,
+.secondary .gform_confirmation_wrapper div {
+	background: transparent;
+	font: 400 13px/15px "Open Sans", sans-serif;
+	color: #6e6e6e;
+	clear: both;
+	text-align: left;
+}
+.secondary .gform_confirmation_wrapper {
+	display: block;
+	background: none repeat scroll 0% 0% #DCE8F3;
+	float: left;
+	width: 525px;
+}
+.secondary .gform_confirmation_wrapper h2,
+.secondary .gform_confirmation_wrapper a {
+	color: #00539A;
+}
+.secondary .gform_confirmation_wrapper div {
+	padding: 15px 0px 0px 0px;
+}
+.secondary .gform_wrapper h3 {
+	font: 600 28px/34px "Open Sans", sans-serif;
+	color: #00539A;
+}
+.secondary .gform_wrapper span {
+	font: 400 13px/15px "Open Sans", sans-serif;
+	margin-bottom: 15px;
+}
+.secondary .gform_wrapper p,
+.secondary .gform_wrapper ul {
+	font: 400 13px/15px "Open Sans", sans-serif;
+	color: #6e6e6e;
+	clear: both;
+}
+.secondary .gform_wrapper p {
+	margin-left: 20px;
+}
+.secondary .gform_wrapper .gform_body ul ul {
+	list-style-type: disc;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
+.secondary .gform_wrapper .gform_body ul ul li {
+	display: list-item;
+}
+.secondary .gform_wrapper form input[type=submit],
+.secondary .gform_wrapper form input[type=button] {
+	padding: 20px 0px;
+	width: 45%;
+	font-size: 18px;
+}
+.secondary .gform_wrapper form .gform_body ul li input[type=checkbox] {
+	margin: 6px 5px 0px 0px;
+}
+#field_3_2 {
+	width: 35%;
+	margin-right: 5%;
+	margin-bottom: 25px;
+}
+#field_3_9 {
+	width: 60%;
+	margin-bottom: 25px;
+}
+#gform_ajax_spinner_3,
+.gform_wrapper form input[type=button].gform_previous_button {
+	display: none;
+}
+#field_3_12 label {
+	display: block;
+	float: left;
+	font: 400 13px/13px "Open Sans", sans-serif;
+	color: #6e6e6e;
+	margin-top: 6px;
+}
+#field_3_12 ul {
+	list-style-type: none;
+}
+#field_3_14 span {
+	margin-left: 10px;
+	margin-top: 5px;
+}
+#field_3_5 {
+	width: 70%;
+	margin-right: 5%;
+	margin-bottom: 25px;
+}
+#field_3_11 {
+	width: 25%;
+	margin-bottom: 25px;
+}
+.secondary .privacy {
+	display: block;
+	float: left;
+	width: 525px;
+	background: #dce8f3;
+}
+.secondary .privacy p {
+	text-align: center;
+	font: 400 10px/10px "Open Sans", sans-serif;
+	margin: 10px 0px 20px 0px;
+}
+.secondary .privacy p a {
+	color: #61AEE0;
+}
+.secondary .privacy p a:hover {
+	color: #317EB0;
+}
+
+.testimonial {
+	display: block;
+	float: left;
+	width: 235px;
+	margin-right: 30px;
+	margin-top: 30px;
+}
+.testimonial:last-of-type {
+	margin-right: 0px;
+}
+.testimonial .content {
+	display: block;
+	float: left;
+	width: 100%;
+	background: #f1f1f1;
+}
+.testimonial .content p {
+	padding: 20px;
+	margin: 0px;
+	font: 400 13px/22px "Open Sans", sans-serif;
+	font-style: italic;
+	color: #00539A;
+	position: relative;
+}
+.testimonial .content p::after {
+	position: absolute;
+	left: 40px;
+	bottom: -10px;
+	content: " ";
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #f1f1f1;
+}
+.testimonial .person {
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 35px;
+	margin-top: 15px;
+	background: url(../global/testimonial-head-dark.png) no-repeat left top;
+	background-size: contain;
+}
+.testimonial .person p {
+	margin: 3px 0px 0px 40%;
+	font: 400 13px/16px "Open Sans", sans-serif;
+	color: #6e6e6e;
+}
+
+.left-element {
+	display: block;
+	float: left;
+	margin: 20px 0px 20px 0px;
+}
+.right-element {
+	display: block;
+	float: right;
+	margin: 20px 0 0 0;
+}
+.right-element h2,
+.right-element p {
+	margin-left: 20px;
+}
+.half {
+	width: 50%;
+}
+
+
+
+@media only screen and (max-width : 1219px) {
+	.testimonial {
+		width: 46%;
+	}
+	.secondary .image {
+		width: 425px;
+		height: 140px;
+	}
+	.secondary .image img {
+		height: 200px;
+		top: -60px;
+	}
+	.secondary .gform_wrapper, .secondary .gform_confirmation_wrapper {
+		width: 425px;
+	}
+	.secondary .privacy {
+		width: 425px;
+	}
+	.secondary .gform_wrapper form input[type=submit] {
+		width: 55%;
+	}
+}
+
+@media only screen and (max-width : 1024px) {
+	article {
+		padding: 40px 30px 0px 30px;
+	}
+	.secondary .image {
+		width: 90%;
+		height: 100px;
+	}
+	.secondary .image img {
+		height: 140px;
+		top: -30px;
+	}
+	.secondary .gform_wrapper, .secondary .gform_confirmation_wrapper {
+		width: 90%;
+	}
+	.secondary .privacy {
+		width: 90%;
+	}
+	.secondary .gform_wrapper, .secondary .gform_confirmation_wrapper {
+		padding: 0px 33px 20px 33px;
+	}
+	.secondary .gform_wrapper form input[type=submit],
+	.secondary .gform_wrapper form input[type=button] {
+		width: 85%;
+	}
+	.testimonial {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width : 640px) {
+	.primary {
+		width: 100%;
+	}
+	article {
+		padding: 40px 20px 0px 10px;
+	}
+	.secondary {
+		width: 100%;
+	}
+	.secondary .image {
+		margin-left: 5%;
+	}
+	.secondary .gform_wrapper, 	.secondary .gform_confirmation_wrapper {
+		margin-left: 5%;
+	}
+	.secondary .privacy {
+		margin-left: 5%;
+	}
+}
+
+@media only screen and (max-width : 321px) {
+
+}
