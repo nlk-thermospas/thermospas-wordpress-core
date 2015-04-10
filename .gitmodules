@@ -1,0 +1,3 @@
+[submodule "dyo"]
+	path = dyo
+	url = https://github.com/nlk-sites/thermospas-dyo.git
