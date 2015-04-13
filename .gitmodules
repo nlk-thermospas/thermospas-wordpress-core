@@ -1,3 +1,6 @@
 [submodule "dyo"]
 	path = dyo
 	url = https://github.com/nlk-sites/thermospas-dyo.git
+[submodule "wp-content/plugins/gravity-forms-lead-perfection-feed"]
+	path = wp-content/plugins/gravity-forms-lead-perfection-feed
+	url = https://github.com/nlk-thermospas/gravity-forms-lead-perfection-feed.git
