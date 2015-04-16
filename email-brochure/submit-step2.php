@@ -1,9 +1,11 @@
 <?php
 
+include_once "lib/db_connect.php";
+
+json_encode( $_POST );
 
 
-
-if ( isset( $_POST ) ) {
+// submit to lead perfection
   $comments = "Primary Use: $_POST['ht_use'], People: $_POST['ht_seating'], Location: $_POST['ht_location'], Owned before: $_POST['ht_owner'], Had Site Inspection: $_POST['ht_siteinspection']";
   $array = array(
     'Fname'      => $_POST['name'],
@@ -29,27 +31,7 @@ if ( isset( $_POST ) ) {
 
   curl_close($ch);
 
-  print($url);
-  print($response);
 
-  die();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-include_once "lib/db_connect.php";
-
-json_encode( $_POST );
 
 $sql_ht_form = "UPDATE ht_form
 		SET `email` = '".$_POST['email']."',
