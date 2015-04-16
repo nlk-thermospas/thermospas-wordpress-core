@@ -1,52 +1,6 @@
 <?
 
 
-
-if ( isset( $_POST ) ) {
-  $comments = "Primary Use: $_POST['ht_use'], People: $_POST['ht_seating'], Location: $_POST['ht_location'], Owned before: $_POST['ht_owner'], Had Site Inspection: $_POST['ht_siteinspection']";
-  $array = array(
-    'Fname'      => $_POST['name'],
-    'Lname'      => $_POST['name'],
-    'Address1'   => $_POST['address'],
-    'Address2'   => '',
-    'City'       => $_POST['city'],
-    'State'      => $_POST['state1'],
-    'Zipcode'    => $_POST['zipcode'],
-    'Email'      => $_POST['email'],
-    'Phone'      => $_POST['phone'],
-    'Comments'   => $comments,
-    'Ht_date'    => '',
-    'Iref'       => $_POST['iref'],
-  );
-  $url = 'http://dd33.leadperfection.com/batch/addleadsinternet.asp';
-
-  $url .= '?' . http_build_query( $array );
-
-  $ch = curl_init( $url );
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $response = curl_exec($ch);
-
-  curl_close($ch);
-
-  print($url);
-  print($response);
-
-  die();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $url_ref = @$_SERVER['HTTP_REFERER'];
 
 $iref = 'IPPC';
