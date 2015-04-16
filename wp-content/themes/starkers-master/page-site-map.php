@@ -121,7 +121,6 @@ if($main != "") {
 				<li><a href="/privacy-policy">Privacy Policy</a></li>
 				<li><a href="/contact-us">Contact Us</a></li>
 				<li><a href="/site-map">Site Map</a></li>
-				<li><a href="/reviews">Reviews</a></li>
 				<li><a href="/patents">Patents</a></li>
 			</ul>
 
