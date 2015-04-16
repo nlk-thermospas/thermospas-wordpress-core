@@ -214,7 +214,7 @@ file: "http://www.youtube.com/watch?v=<?=$video_id?>"
                   Warm water therapy offers many, many therapeutic benefits... </td>
               </tr>
                         <tr>
-                <td width="100"><a href="<?php echo home_url( '/' ); ?>resources?vid=designedgoanywere"><img src="<?php echo home_url( '/' ); ?>wp-content/uploads/2015/01/portable_hot_tub.jpg" alt="Designed to Go Anywhere" width="100" height="66" border="0" /></a></td>
+                <td width="100"><a href="<?php echo home_url( '/' ); ?>resources?vid=designedgoanywere"><img src="<?php  bloginfo( 'template_url' ); ?>/images/portable_hot_tub.jpg" alt="Designed to Go Anywhere" width="100" height="66" border="0" /></a></td>
                 <td valign="top"><a href="<?php echo home_url( '/' ); ?>resources?vid=designedgoanywere"><strong>Portable Hot Tubs With Zero Plumbing From ThermoSpas</strong></a>&nbsp;&nbsp;&nbsp;0:43<br />
                   ThermoSpas may look permanent but  are actually considered portable... </td>
               </tr>
