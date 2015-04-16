@@ -355,7 +355,6 @@ $(document).ready(function(){
 	}
 	function submit_data_step1(){
 		__ss_noform.push(['submit', null]);
-		alert('step 1');
 		$.ajax({
 			url: '/email-brochure/submit-step1.php',
 			type: 'POST',
@@ -374,6 +373,9 @@ $(document).ready(function(){
 			type: 'POST',
 			dataType: 'json',
 			data: $('#ht_form').serialize(),
+			success: function(data) {
+		    	alert(data);
+		    }
 			complete: function(html){
 				//window.location = "/hot-tub-pricing-results";
 			}

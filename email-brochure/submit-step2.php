@@ -30,7 +30,9 @@ json_encode( $_POST );
   $response = curl_exec($ch);
 
   curl_close($ch);
-  echo '<script> alert("test"); </script>';
+  echo $url;
+
+  die();
 
 
 
