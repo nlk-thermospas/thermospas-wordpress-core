@@ -355,6 +355,7 @@ $(document).ready(function(){
 	}
 	function submit_data_step1(){
 		__ss_noform.push(['submit', null]);
+		console.log( $('#ht_form').serialize() );
 		$.ajax({
 			url: '/email-brochure/submit-step1.php',
 			type: 'POST',
@@ -362,22 +363,21 @@ $(document).ready(function(){
 			data: $('#ht_form').serialize(),
 			complete: function(html){
 				ppcconversion();
+				console.log(html);
 			}
 		});
 	}
 	function submit_data_step2(ht_token){
 		__ss_noform.push(['submit', null]);
-		alert('step 2');
+		console.log( $('#ht_form').serialize() );
 		$.ajax({
 			url: '/email-brochure/submit-step2.php',
 			type: 'POST',
 			dataType: 'json',
 			data: $('#ht_form').serialize(),
-			success: function(data) {
-		    	alert(data);
-		    }
 			complete: function(html){
-				//window.location = "/hot-tub-pricing-results";
+				console.log(html);
+				window.location = "/hot-tub-pricing-results";
 			}
 		});
 	}
@@ -386,7 +386,7 @@ $(document).ready(function(){
 		iframe.style.width = '0px';
 		iframe.style.height = '0px';
 		document.body.appendChild(iframe);
-		iframe.src = 'tracking.html';
+		iframe.src = 'email-brochure/tracking.html';
 	}
 	function cjconversion() {
 		var iframe = document.createElement('iframe');

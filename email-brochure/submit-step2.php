@@ -1,12 +1,9 @@
 <?php
 
-include_once "lib/db_connect.php";
-
 json_encode( $_POST );
 
-
 // submit to lead perfection
-  $comments = "Primary Use: $_POST['ht_use'], People: $_POST['ht_seating'], Location: $_POST['ht_location'], Owned before: $_POST['ht_owner'], Had Site Inspection: $_POST['ht_siteinspection']";
+  $comments = "Primary Use: ".$_POST['ht_use'].", People: ".$_POST['ht_seating'].", Location: ".$_POST['ht_location'].", Owned before: ".$_POST['ht_owner'].", Had Site Inspection: ".$_POST['ht_siteinspection'];
   $array = array(
     'Fname'      => $_POST['name'],
     'Lname'      => $_POST['name'],
@@ -30,11 +27,12 @@ json_encode( $_POST );
   $response = curl_exec($ch);
 
   curl_close($ch);
-  echo $url;
-
-  die();
+  echo $response;
 
 
+/*
+
+include_once "lib/db_connect.php";
 
 $sql_ht_form = "UPDATE ht_form
 		SET `email` = '".$_POST['email']."',
@@ -67,12 +65,12 @@ if(mysql_query($sql_ht_form)):
 		<!-- Google Code for ThermoSpas -->
 		<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
 		<script type="text/javascript">
-			/* <![CDATA[ */
+			/* <![CDATA[ * /
 			var google_conversion_id = 1070435200;
 			var google_conversion_label = "ZHS9CKDnzgEQgJe2_gM";
 			var google_custom_params = window.google_tag_params;
 			var google_remarketing_only = true;
-			/* ]]> */
+			/* ]]> * /
 		</script>
 		<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 		</script>
@@ -112,4 +110,5 @@ else:
 
 endif;
 
+*/
 ?>
