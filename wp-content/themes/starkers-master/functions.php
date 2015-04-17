@@ -243,3 +243,17 @@
 		curl_close($ch);
 	}
 
+	
+	add_action('pre_get_posts','wpse67626_exclude_posts_from_search');
+	
+	function wpse67626_exclude_posts_from_search( $query ){
+	
+	    if( $query->is_main_query() && is_search() ){
+	         //Exclude posts by ID
+	         $post_ids = array(6546,7339);
+	         $query->set('post__not_in', $post_ids);
+	    }
+	
+	}
+	
+	
