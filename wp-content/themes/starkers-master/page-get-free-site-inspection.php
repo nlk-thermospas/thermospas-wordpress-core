@@ -27,6 +27,14 @@
 
 <div class="secondary">
 	<?php echo do_shortcode('[gravityform id=4 title=false description=false ajax=true]'); ?>
+	<script>
+		jQuery(document).ready(function(){
+			jQuery('#input_4_9').datepicker({ 
+		   					minDate: 0,
+		  					maxDate: +7
+						});	
+		});
+	</script>
 	<div class="privacy">
 		<p><a class="privacy-modal" href="#">Privacy Policy</a></p>
 		<div class="privacy-modal-container">
