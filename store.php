@@ -49,6 +49,7 @@ if($conn->query($sql) === false) {
   mail($to, $subject, $message, $headers);
 
   _submit_to_sharpspring($_POST);
+  _submit_to_leadperfect($_POST);
 
 }
 
@@ -73,6 +74,34 @@ function _submit_to_sharpspring($data) {
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_exec($ch);
   curl_close($ch);
+}
+
+
+function _submit_to_leadperfect($data)
+{
+	$comments = 'Model: ' . $data['Model'] . ', Jets: ' . $data['Jets'] . ', Shell: ' . $data['Shell'] . ', Cabinet: ' . $data['Cabinet'] . ', Options: ' . $data['Options']; // options are comma separated values
+	$array = array(
+	'Fname'      => $data['Name'],
+	'Lname'      => $data['Name'],
+	'Address1'   => $data['Address'],
+	'Address2'   => '',
+	'City'       => $_POST['City'],
+	'State'      => $_POST['State'],
+	'Zipcode'    => $_POST['Zip'],
+	'Email'      => $_POST['Email'],
+	'Phone'      => $_POST['Phone'],
+	'Comments'   => $comments,
+	'Ht_date'    => '',
+	'Iref'       => 'IDYO',
+	);
+	
+	$url = 'http://dd33.leadperfection.com/batch/addleadsinternet.asp';
+	$url .= '?' . http_build_query( $array );
+	$ch = curl_init( $url );
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$response = curl_exec($ch);
+	curl_close($ch);
+		
 }
 
 ?>
