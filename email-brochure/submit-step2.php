@@ -2,7 +2,6 @@
 
 json_encode( $_POST );
 
-/*
 // submit to lead perfection
   $comments = "Primary Use: ".$_POST['ht_use'].", People: ".$_POST['ht_seating'].", Location: ".$_POST['ht_location'].", Owned before: ".$_POST['ht_owner'].", Had Site Inspection: ".$_POST['ht_siteinspection'];
   $array = array(
@@ -28,8 +27,7 @@ json_encode( $_POST );
   $response = curl_exec($ch);
 
   curl_close($ch);
-  //echo $response;
-*/
+
 
 
 
