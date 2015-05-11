@@ -245,60 +245,27 @@ header .utility ul li a strong {
 
 
 
-footer {
-	display: block;
-	width: 100%;
-	float: left;
-	padding-top: 30px;
-	background: #fff;
-}
-footer p {
-	margin: 10px 10px 25px 10px;
-	text-align: center;
-	color: #6E6E6E;
-	font: 400 11px/14px "Open Sans", sans-serif;
-}
-footer p a {
-	color: #61AEE0;
-}
-footer p a:hover {
-	color: #317EB0;
-}
-footer ul.social {
-	display: block;
-	margin: auto !important;
-	width: 100% !important;
-	text-align: center;
-	padding-bottom: 40px;
-	padding-left: 0px;
-}
-footer ul.social li {
-	display: inline-block !important;
-	float: none !important;
-	width: 30px !important;
-	height: 30px !important;
-	margin-right: 10px !important;
-}
-footer ul.social li:last-of-type {
+
+footer ul.social li:last-of-type, .footer ul.social li:last-of-type {
 	margin-right: 0px;
 }
-footer ul.social li.facebook {
+footer ul.social li.facebook, .footer ul.social li.facebook {
 	background: url(../global/facebook.png) no-repeat left top;
 	background-size: contain;
 }
-footer ul.social li.twitter {
+footer ul.social li.twitter, .footer ul.social li.twitter {
 	background: url(../global/twitter.png) no-repeat left top;
 	background-size: contain;
 }
-footer ul.social li.youtube {
+footer ul.social li.youtube, .footer ul.social li.youtube {
 	background: url(../global/youtube.png) no-repeat left top;
 	background-size: contain;
 }
-footer ul.social li.pinterest {
+footer ul.social li.pinterest, .footer ul.social li.pinterest {
 	background: url(../global/pinterest.png) no-repeat left top;
 	background-size: contain;
 }
-footer ul.social li a {
+footer ul.social li a, .footer ul.social li a {
 	display: block;
 	float: left;
 	width: 30px;
