@@ -165,9 +165,10 @@ $additonalResources = get_post_meta($post->ID, 'additonal_resources', true);
 	<iframe src="//flex.msn.com/mstag/tag/7eda56ec-dae3-4bd4-915b-8a11f9d7ad95/analytics.html?dedup=1&domainId=572823&type=1&actionid=66891" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"> </iframe>
 </noscript>
 
+<?php /*
 <!-- Google Code for Clix Conversion Conversion Page -->
 <script type="text/javascript">
-    /* <![CDATA[ */
+    /* <![CDATA[ * /
     var google_conversion_id = 1070435200;
     var google_conversion_language = "en";
     var google_conversion_format = "3";
@@ -175,7 +176,7 @@ $additonalResources = get_post_meta($post->ID, 'additonal_resources', true);
     var google_conversion_label = "UstwCKjK2QEQgJe2_gM";
     var google_conversion_value = 0;
     var google_remarketing_only = false;
-    /* ]]> */
+    /* ]]> * /
 </script>
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
 <noscript>
@@ -183,5 +184,6 @@ $additonalResources = get_post_meta($post->ID, 'additonal_resources', true);
 		<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1070435200/?value=0&amp;label=UstwCKjK2QEQgJe2_gM&amp;guid=ON&amp;script=0"/>
 	</div>
 </noscript>
+*/ ?>
 
 <?php Starkers_Utilities::get_template_parts( array( 'html-footer' ) ); ?>
