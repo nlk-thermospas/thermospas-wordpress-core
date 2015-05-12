@@ -6,6 +6,32 @@ include_once "lib/db_connect.php";
 
 json_encode( $_POST );
 
+// submit to lead perfection
+  $comments = "Primary Use: ".$_POST['ht_use'].", People: ".$_POST['ht_seating'];
+  $array = array(
+    'Fname'      => $_POST['name'],
+    'Lname'      => $_POST['name'],
+    'Zipcode'    => $_POST['zipcode'],
+    'Phone'      => $_POST['phone'],
+    'Comments'   => $comments,
+    'Iref'       => $_POST['iref'],
+  );
+  $url = 'http://dd33.leadperfection.com/batch/addleadsinternet.asp';
+
+  $url .= '?' . http_build_query( $array );
+
+  $ch = curl_init( $url );
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $response = curl_exec($ch);
+
+  curl_close($ch);
+
+
+
+
+
+
+
 $phone = $_POST['phone'];
 
 $search1  = array('(', ')');
