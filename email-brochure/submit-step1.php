@@ -8,9 +8,10 @@ json_encode( $_POST );
 
 // submit to lead perfection
   $comments = "Primary Use: ".$_POST['ht_use'].", People: ".$_POST['ht_seating'];
+  $name = explode(" ", $_POST['name'], 2);
   $array = array(
-    'Fname'      => $_POST['name'],
-    'Lname'      => $_POST['name'],
+    'Fname'      => isset( $name[0] ) ? $name[0] : $_POST['name'],
+    'Lname'      => isset( $name[1] ) ? $name[1] : '',
     'Zipcode'    => $_POST['zipcode'],
     'Phone'      => $_POST['phone'],
     'Comments'   => $comments,
