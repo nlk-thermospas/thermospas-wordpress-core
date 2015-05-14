@@ -16,6 +16,34 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'html-header', 'header' ) ); ?>
 
+<?php
+$productIDs = "";
+$args = array(
+	'numberposts' => -1,
+	'post_type' => 'hot_tubs',
+	'orderby' => 'title',
+	'order' => 'ASC'
+);
+$tubs = get_posts($args);
+foreach($tubs as $tub) {
+	$bazaarVoiceID = get_post_meta($tub->ID, 'bazaarvoice_id', true);
+	$productIDs .= "'";
+	$productIDs .= $bazaarVoiceID;
+	$productIDs .= "'";
+	$productIDs .= ", ";
+}
+$productIDs = rtrim($productIDs, ", ");
+
+?>
+
+<script type="text/javascript">
+	$BV.ui( 'rr', 'inline_ratings', {
+		productIds : [<?=$productIDs?>],
+		containerPrefix : 'BVRRInlineRating'
+	});
+</script>
+
+
 <link rel="stylesheet" href="/dress/css/home.css" />
 <script src="/js/home.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/fancybox/jquery.fancybox.pack.js"></script>
