@@ -16,38 +16,17 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'html-header', 'header' ) ); ?>
 
-<?php
-$productIDs = "";
-$args = array(
-	'numberposts' => -1,
-	'post_type' => 'hot_tubs',
-	'orderby' => 'title',
-	'order' => 'ASC'
-);
-$tubs = get_posts($args);
-foreach($tubs as $tub) {
-	$bazaarVoiceID = get_post_meta($tub->ID, 'bazaarvoice_id', true);
-	$productIDs .= "'";
-	$productIDs .= $bazaarVoiceID;
-	$productIDs .= "'";
-	$productIDs .= ", ";
-}
-$productIDs = rtrim($productIDs, ", ");
-
-?>
-
-<script type="text/javascript">
-	$BV.ui( 'rr', 'inline_ratings', {
-		productIds : [<?=$productIDs?>],
-		containerPrefix : 'BVRRInlineRating'
-	});
-</script>
-
 
 <link rel="stylesheet" href="/dress/css/home.css" />
 <script src="/js/home.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/fancybox/jquery.fancybox.pack.js"></script>
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+<script src="/js/hot-tubs.js"></script>
+
+<?php
+	$productIDs = "";
+?>
+
 <script>
 	
 		jQuery(document).ready(function() {
@@ -73,7 +52,7 @@ $productIDs = rtrim($productIDs, ", ");
 		 display: block;
 		 float: left;
 		 width: 183px;
-		 margin-right: 20px;
+		 margin-right: 5px;
 		 margin-bottom: 30px;
 		 list-style: none;
 		 background: none !important;
@@ -295,7 +274,16 @@ $productIDs = rtrim($productIDs, ", ");
 										echo "<p class=\"blurb\">" . $blurb . "</p>";
 										echo "<p class=\"more\"><a href=\"/hot-tubs/" . $tub->post_name . "\">Learn More</a></p>";
 										echo "</li>";
+										
+										$bazaarVoiceID = get_post_meta($tub->ID, 'bazaarvoice_id', true);
+										$productIDs .= "'";
+										$productIDs .= $bazaarVoiceID;
+										$productIDs .= "'";
+										$productIDs .= ", ";
 									}
+
+									$productIDs = rtrim($productIDs, ", ");
+										
 								endif;
 						?>
 					</ul>
@@ -524,5 +512,12 @@ $productIDs = rtrim($productIDs, ", ");
 <?php //Starkers_Utilities::get_template_parts( array( 'footer' ) ); ?>
 
 </div>
+
+<script type="text/javascript">
+	$BV.ui( 'rr', 'inline_ratings', {
+		productIds : [<?=$productIDs?>],
+		containerPrefix : 'BVRRInlineRating'
+	});
+</script>
 
 <?php Starkers_Utilities::get_template_parts( array( 'html-footer' ) ); ?>
