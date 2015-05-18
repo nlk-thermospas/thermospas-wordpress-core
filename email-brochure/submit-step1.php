@@ -27,14 +27,6 @@ json_encode( $_POST );
 
   curl_close($ch);
 
-?>
-<pre style="display: none;">
-<?php print_r( $name ); print_r( $_POST ); ?>
-</pre>
-<?php
-
-
-
 
 
 $phone = $_POST['phone'];
