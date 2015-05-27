@@ -13,9 +13,6 @@ if ($conn->connect_error) {
   trigger_error('Database connection failed: '  . $conn->connect_error, E_USER_ERROR);
 }
 
-// Sanitize all $_POST data
-$_POST = sanitize($_POST);
-
 $name_arr = explode(' ', $_POST['Name']);
 $last_name = array_pop($name_arr);
 $first_name = implode(' ', $name_arr);
@@ -24,7 +21,7 @@ $comments = '{"model" : "' . $_POST['Model'] . '", "jets" : "' . $_POST['Jets'] 
 
 $sql = "";
 $sql .= "INSERT INTO ht_form";
-$sql .= "(name, first_name, last_name, address1, city, state, zipcode, phone, email, comments, iref, ht_date)";
+$sql .= "(name, fname, lname, address1, city, state, zipcode, phone, email, comments, iref, ht_date)";
 $sql .= "VALUES";
 $sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', 'iDYO', '" . date("Y-m-d") . "')";
 
@@ -59,37 +56,6 @@ if($conn->query($sql) === false) {
   _submit_to_sharpspring($_POST);
   _submit_to_leadperfect($_POST);
 
-}
-
-// Function for stripping out malicious bits
-function cleanInput($input) {
-
-  $search = array(
-    '@<script[^>]*?>.*?</script>@si',   // Strip out javascript
-    '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
-    '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
-    '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments
-  );
-
-  $output = preg_replace($search, '', $input);
-  return $output;
-  }
-
-// Sanitization function
-function sanitize($input) {
-  if (is_array($input)) {
-    foreach($input as $var=>$val) {
-      $output[$var] = sanitize($val);
-    }
-  }
-  else {
-    if (get_magic_quotes_gpc()) {
-      $input = stripslashes($input);
-    }
-    $input  = cleanInput($input);
-    $output = mysql_real_escape_string($input);
-  }
-  return $output;
 }
 
 function _submit_to_sharpspring($data) {
