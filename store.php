@@ -1,5 +1,6 @@
 <?php
 
+
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 
@@ -12,13 +13,20 @@ if ($conn->connect_error) {
   trigger_error('Database connection failed: '  . $conn->connect_error, E_USER_ERROR);
 }
 
+// Sanitize all $_POST data
+$_POST = sanitize($_POST);
+
+$name_arr = explode(' ', $_POST['Name']);
+$last_name = array_pop($name_arr);
+$first_name = implode(' ', $name_arr);
+
 $comments = '{"model" : "' . $_POST['Model'] . '", "jets" : "' . $_POST['Jets'] . '", "shell" : "' . $_POST['Shell'] . '", "cabinet" : "' . $_POST['Cabinet'] . '", "options" : "' . $_POST['Options'] . '"}';
 
 $sql = "";
 $sql .= "INSERT INTO ht_form";
-$sql .= "(name, address1, city, state, zipcode, phone, email, comments, iref, ht_date)";
+$sql .= "(name, first_name, last_name, address1, city, state, zipcode, phone, email, comments, iref, ht_date)";
 $sql .= "VALUES";
-$sql .=	"('" . $_POST['Name'] . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', 'iDYO', '" . date("Y-m-d") . "')";
+$sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', 'iDYO', '" . date("Y-m-d") . "')";
 
 if($conn->query($sql) === false) {
   trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
@@ -26,7 +34,7 @@ if($conn->query($sql) === false) {
   $last_inserted_id = $conn->insert_id;
   $affected_rows = $conn->affected_rows;
 
-  //Send an Email!
+  // Send an Email!
   $to = "web@thermospas.com";
   $from = "info@thermospas.com";
   $subject = "HT Form Submission";
@@ -53,8 +61,36 @@ if($conn->query($sql) === false) {
 
 }
 
+// Function for stripping out malicious bits
+function cleanInput($input) {
 
+  $search = array(
+    '@<script[^>]*?>.*?</script>@si',   // Strip out javascript
+    '@<[\/\!]*?[^<>]*?>@si',            // Strip out HTML tags
+    '@<style[^>]*?>.*?</style>@siU',    // Strip style tags properly
+    '@<![\s\S]*?--[ \t\n\r]*>@'         // Strip multi-line comments
+  );
 
+  $output = preg_replace($search, '', $input);
+  return $output;
+  }
+
+// Sanitization function
+function sanitize($input) {
+  if (is_array($input)) {
+    foreach($input as $var=>$val) {
+      $output[$var] = sanitize($val);
+    }
+  }
+  else {
+    if (get_magic_quotes_gpc()) {
+      $input = stripslashes($input);
+    }
+    $input  = cleanInput($input);
+    $output = mysql_real_escape_string($input);
+  }
+  return $output;
+}
 
 function _submit_to_sharpspring($data) {
   $endPoint = "52ac184a-53e1-4bf3-8fd7-537509a75d63";
