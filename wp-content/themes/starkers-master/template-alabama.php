@@ -269,7 +269,7 @@
 										$jets = get_post_meta($tub->ID, 'jets', true);
 										echo "<p class=\"meta\">Seats: " . $seats . " Adults | " . $jets . " Jets</p>";
 										$bazaarVoiceID = get_post_meta($tub->ID, 'bazaarvoice_id', true);
-										echo "<div class=\"BVRRInlineRating BVRRInlineRating-" . $bazaarVoiceID . "\"></div>";
+										echo "<div id=\"BVRRInlineRating-" . $bazaarVoiceID . "\" class=\"BVRRInlineRating\"></div>";
 										$blurb = get_post_meta($tub->ID, 'blurb', true);
 										echo "<p class=\"blurb\">" . $blurb . "</p>";
 										echo "<p class=\"more\"><a href=\"/hot-tubs/" . $tub->post_name . "\">Learn More</a></p>";
