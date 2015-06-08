@@ -49,7 +49,7 @@
 			<link rel="stylesheet" href="/dress/css/get-pricing.css" />
 		<?php }	?>
 
-		<?php if($uriArr[1] == "dyo") { ?>
+		<?php if($uriArr[1] == "dyo" || $uriArr[1] == "dyo1") { ?>
 			<link rel="stylesheet" href="/dress/css/dyo.css" />
 		<?php }	?>
 
