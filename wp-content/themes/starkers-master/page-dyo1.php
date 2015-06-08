@@ -14,7 +14,7 @@
 
 		<article>
 
-			<iframe src="http://thermospas-dyo.herokuapp.com/"></iframe>
+			<iframe src="http://thermospas-dyo.herokuapp.com?display=false/"></iframe>
 
 		</article>
 
