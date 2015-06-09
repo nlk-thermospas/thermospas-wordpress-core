@@ -155,6 +155,7 @@ $additonalResources = get_post_meta($post->ID, 'additonal_resources', true);
 	</div>
 </noscript>
 
+<?php $str = <<<EOD
 <!-- Bing -->
 <script type="text/javascript">
 	if (!window.mstag) mstag = {loadTag : function(){},time : (new Date()).getTime()};
@@ -183,5 +184,6 @@ $additonalResources = get_post_meta($post->ID, 'additonal_resources', true);
 		<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1070435200/?value=0&amp;label=UstwCKjK2QEQgJe2_gM&amp;guid=ON&amp;script=0"/>
 	</div>
 </noscript>
+EOD; ?>
 
 <?php Starkers_Utilities::get_template_parts( array( 'html-footer' ) ); ?>
