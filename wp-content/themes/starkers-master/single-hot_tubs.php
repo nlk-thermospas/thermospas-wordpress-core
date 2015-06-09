@@ -279,15 +279,18 @@
 					<?=apply_filters('the_content', $warranty[0]) ?>
 				</div>
 				<div id="reviews" class="tab">
-					<div id="BVRRContainer"></div>
-					<script type="text/javascript">
-					  $BV.ui( 'rr', 'show_reviews', {
-					    doShowContent : function () {
-					      // If the container is hidden (such as behind a tab), put code here to make it visible
-					      // (open the tab).
-					    }
-					  });
-					</script>
+					<div itemscope itemtype="http://schema.org/Product">
+						<meta itemprop="name" content="<?php echo the_title(); ?>" />
+						<div id="BVRRContainer"></div>
+						<script type="text/javascript">
+						  $BV.ui( 'rr', 'show_reviews', {
+						    doShowContent : function () {
+						      // If the container is hidden (such as behind a tab), put code here to make it visible
+						      // (open the tab).
+						    }
+						  });
+						</script>
+					</div>
 				</div>
 			</div>
 		</div>
