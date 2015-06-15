@@ -257,3 +257,66 @@
 	}
 	
 	
+/** BV : BazaarVoice Integrations **/
+
+	// load SDK
+	require('includes/bvseosdk.php');
+
+	// Enqueue BV scripts
+	if ( ! function_exists('bazaar_voice_scripts') ) {
+		function bazaar_voice_scripts() {
+			// load bvpai.js
+			if ( is_page('reviews') ) {
+				if ( jht_my_server() != 'live' ) {
+					wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
+				}
+				else {
+					wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/jacuzzi/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
+				}
+			}
+			else {
+				if ( jht_my_server() != 'live' ) {
+					wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/en_US/bvapi.js', array(), '1.0', false); //staging
+				}
+				else {
+					wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/jacuzzi/en_US/bvapi.js', array(), '1.0', false); //production
+				}
+			}
+		}
+		add_action( 'wp_enqueue_scripts', 'bazaar_voice_scripts' );
+	}
+
+	// Remove Canonical Link Added By Yoast WordPress SEO Plugin if URL has query string (this is for BV SEO Pagination)
+	function remove_yoast_canonical_link() {
+		return false;
+	}
+	if ( $_GET )
+		add_filter( 'wpseo_canonical', 'remove_yoast_canonical_link' );
+
+	function pixel_bazaarinvoice() {
+
+		global $post;
+		$custom = get_post_meta($post->ID,'jht_specs');
+		$jht_specs = $custom[0];
+		$prod = esc_attr($jht_specs['product_id']);
+		$val = get_post_meta( $post->ID, 'lead-type', true );
+
+		if ( !empty( $prod ) ) { ?>
+			<script type="text/javascript"> 
+			$BV.configure("global", { productId : "<?php echo $prod; ?>" });
+			</script>
+		<?php }
+		
+		if ( !empty( $val ) ) { ?>
+			<script>
+			$BV.SI.trackConversion({
+			"type" : "lead-<?php echo $val; ?>",
+			"value" : "<?php echo $val; ?>"
+			});
+			</script>
+		<?php }
+	}
+
+	add_action('wp_head', 'pixel_bazaarinvoice');
+
+/** END BazaarVoice **/
