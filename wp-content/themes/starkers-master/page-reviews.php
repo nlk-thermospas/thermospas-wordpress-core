@@ -19,7 +19,7 @@ $bv = new BV(
         'deployment_zone_id' => 'Main_Site-en_US',
         'product_id' => "TS-ALL-REVIEWS", // must match ExternalID in the BV product feed
         'cloud_key' => 'thermospas-b54386e4fe2a2ebd9478b68fca20be5b',
-        'staging' => false
+        'staging' => true
         )
     );
 
@@ -61,7 +61,7 @@ if($main != "") {
 				    );
 				}
 			</script>
-			<p><button type="button" class="btn cta" onclick="submitGeneric()">Write a Review</button></p>
+			<p><button type="button" class="btn red-btn cta" onclick="submitGeneric()">Write a Review</button></p>
 				<?=apply_filters('the_content', $post->post_content) ?>
 			<div id="BVRRContainer">
 	    		<?php echo $bv->reviews->getContent();?>
