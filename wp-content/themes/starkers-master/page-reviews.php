@@ -18,7 +18,7 @@ $bv = new BV(
     array(
         'deployment_zone_id' => 'Main_Site-en_US',
         'product_id' => "TS-ALL-REVIEWS", // must match ExternalID in the BV product feed
-        'cloud_key' => 'jacuzzi-6e973cecb3ca4a2d532da7d906a4cc84',
+        'cloud_key' => 'thermospas-b54386e4fe2a2ebd9478b68fca20be5b',
         'staging' => false
         )
     );
