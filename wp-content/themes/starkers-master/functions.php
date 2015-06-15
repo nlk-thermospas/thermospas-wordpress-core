@@ -267,20 +267,10 @@
 		function bazaar_voice_scripts() {
 			// load bvpai.js
 			if ( is_page('reviews') ) {
-				if ( jht_my_server() != 'live' ) {
-					wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
-				}
-				else {
-					wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/jacuzzi/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
-				}
+				wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
 			}
 			else {
-				if ( jht_my_server() != 'live' ) {
-					wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/en_US/bvapi.js', array(), '1.0', false); //staging
-				}
-				else {
-					wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/jacuzzi/en_US/bvapi.js', array(), '1.0', false); //production
-				}
+				wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/en_US/bvapi.js', array(), '1.0', false); //staging
 			}
 		}
 		add_action( 'wp_enqueue_scripts', 'bazaar_voice_scripts' );
@@ -293,20 +283,18 @@
 	if ( $_GET )
 		add_filter( 'wpseo_canonical', 'remove_yoast_canonical_link' );
 
+	/* This is a Jacuzzi thing, so commenting out for now... */
 	function pixel_bazaarinvoice() {
-
 		global $post;
 		$custom = get_post_meta($post->ID,'jht_specs');
 		$jht_specs = $custom[0];
 		$prod = esc_attr($jht_specs['product_id']);
 		$val = get_post_meta( $post->ID, 'lead-type', true );
-
 		if ( !empty( $prod ) ) { ?>
 			<script type="text/javascript"> 
 			$BV.configure("global", { productId : "<?php echo $prod; ?>" });
 			</script>
 		<?php }
-		
 		if ( !empty( $val ) ) { ?>
 			<script>
 			$BV.SI.trackConversion({
@@ -316,7 +304,6 @@
 			</script>
 		<?php }
 	}
-
-	add_action('wp_head', 'pixel_bazaarinvoice');
+	//add_action('wp_head', 'pixel_bazaarinvoice');
 
 /** END BazaarVoice **/
