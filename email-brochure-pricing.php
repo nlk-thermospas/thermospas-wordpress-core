@@ -156,6 +156,7 @@ if(@strlen($_REQUEST['ht_token']) == "" || $ht_token == "") {
 
 <?php /* Google Remarketing all visitors moved to GTM */ ?>
 
+<?php /* Removed [https://ninthlink.atlassian.net/browse/THERMO-42]
     <script type="text/javascript">
     var _ss = _ss || [];
     _ss.push(['_setDomain', 'https://koi-PLBR48.sharpspring.com/net']);
@@ -169,6 +170,7 @@ if(@strlen($_REQUEST['ht_token']) == "" || $ht_token == "") {
     scr.parentNode.insertBefore(ss, scr);
     })();
     </script>
+*/ ?>
 
   </head>
 

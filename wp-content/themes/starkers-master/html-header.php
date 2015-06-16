@@ -76,6 +76,8 @@
 		<?php } else { ?>
 			<script src="/js/pages.js"></script>
 		<?php } ?>
+
+		<?php /* Removed [https://ninthlink.atlassian.net/browse/THERMO-42]
 		<script type="text/javascript">
 			var _ss = _ss || [];
 			_ss.push(['_setDomain', 'https://koi-PLBR48.sharpspring.com/net']);
@@ -89,6 +91,7 @@
 			    scr.parentNode.insertBefore(ss, scr);
 			})();
 		</script>
+		*/ ?>
 	</head>
 	<body <?php body_class(); ?>>
 
