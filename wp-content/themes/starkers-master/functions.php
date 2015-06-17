@@ -267,10 +267,10 @@
 		function bazaar_voice_scripts() {
 			// load bvpai.js
 			if ( is_page('reviews') ) {
-				wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
+				wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/thermospas/en_US/bvapi.js', array(), '1.0', false);
 			}
 			else {
-				wp_enqueue_script( 'bvapi-js', '//display-stg.ugc.bazaarvoice.com/static/jacuzzi/en_US/bvapi.js', array(), '1.0', false); //staging
+				wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/thermospas/en_US/bvapi.js', array(), '1.0', false); //staging
 			}
 		}
 		add_action( 'wp_enqueue_scripts', 'bazaar_voice_scripts' );
