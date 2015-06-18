@@ -265,12 +265,13 @@
 	// Enqueue BV scripts
 	if ( ! function_exists('bazaar_voice_scripts') ) {
 		function bazaar_voice_scripts() {
+			$root = ( get_bloginfo('url') == 'http://new.thermospas.com' ) ? '//display-stg.ugc.bazaarvoice.com' : '//display.ugc.bazaarvoice.com';
 			// load bvpai.js
 			if ( is_page('reviews') ) {
-				wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/thermospas/en_US/bvapi.js', array(), '1.0', false);
+				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/en_US/bvapi.js', array(), '1.0', false);
 			}
 			else {
-				wp_enqueue_script( 'bvapi-js', '//display.ugc.bazaarvoice.com/static/thermospas/en_US/bvapi.js', array(), '1.0', false); //staging
+				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/en_US/bvapi.js', array(), '1.0', false); //staging
 			}
 		}
 		add_action( 'wp_enqueue_scripts', 'bazaar_voice_scripts' );
