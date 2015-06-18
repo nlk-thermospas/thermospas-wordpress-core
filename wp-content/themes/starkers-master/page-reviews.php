@@ -61,7 +61,6 @@ if($main != "") {
 				    );
 				}
 			</script>
-			<p><button type="button" class="btn red-btn cta" onclick="submitGeneric()">Write a Review</button></p>
 				<?=apply_filters('the_content', $post->post_content) ?>
 			<div id="BVRRContainer">
 	    		<?php echo $bv->reviews->getContent();?>
