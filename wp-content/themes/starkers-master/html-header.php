@@ -117,4 +117,3 @@
 		</script>
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54b423dd1a227c8d" async="async"></script>
-		<script type="text/javascript" src="//display.ugc.bazaarvoice.com/static/thermospas/en_US/bvapi.js"></script>
