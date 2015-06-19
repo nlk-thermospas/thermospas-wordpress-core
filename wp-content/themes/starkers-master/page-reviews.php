@@ -19,7 +19,7 @@ $bv = new BV(
         'deployment_zone_id' => 'Main_Site-en_US',
         'product_id' => "TS-ALL-REVIEWS", // must match ExternalID in the BV product feed
         'cloud_key' => 'thermospas-b54386e4fe2a2ebd9478b68fca20be5b',
-        'staging' => true
+        'staging' => false
         )
     );
 
