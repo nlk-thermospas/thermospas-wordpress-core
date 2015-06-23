@@ -82,6 +82,11 @@ function _submit_to_sharpspring($data) {
 
 function _submit_to_leadperfect($data)
 {
+  $full_name = rtrim($_POST['Name']);
+  $name_arr = explode(' ', $full_name);
+  $last_name = array_pop($name_arr);
+  $first_name = implode(' ', $name_arr);
+  
 	$comments = 'Model: ' . $data['Model'] . ', Jets: ' . $data['Jets'] . ', Shell: ' . $data['Shell'] . ', Cabinet: ' . $data['Cabinet'] . ', Options: ' . $data['Options']; // options are comma separated values
 	$array = array(
 	'Fname'      => $first_name,
