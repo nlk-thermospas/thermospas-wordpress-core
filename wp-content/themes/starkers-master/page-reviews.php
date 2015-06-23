@@ -62,24 +62,23 @@ if($main != "") {
 				}
 			</script>
 				<?=apply_filters('the_content', $post->post_content) ?>
-			<div id="BVRRContainer">
-	    		<?php echo $bv->reviews->getContent();?>
+			<div itemscope itemtype="http://schema.org/Product">
+				<meta itemprop="name" content="<?php echo the_title(); ?>" />
+				<div id="BVRRContainer">
+		    		<?php echo $bv->reviews->getContent();?>
+				</div>
 			</div>
-
-
-<?php
-$callOuts = get_post_meta($post->ID, 'call-outs', true);
-if($callOuts != "") {
-?>
-			<div class="call-outs-container" style="display: block; float: left; background: yellow">
-				<div class="call-outs">
-<?php
-echo apply_filters('the_content', $callOuts);
-?>
-			</div>
-		</div>
-
-<?php } ?>
+			<?php
+			$callOuts = get_post_meta($post->ID, 'call-outs', true);
+			if($callOuts != "") { ?>
+				<div class="call-outs-container" style="display: block; float: left; background: yellow">
+					<div class="call-outs">
+						<?php
+						echo apply_filters('the_content', $callOuts);
+						?>
+					</div>
+				</div>
+			<?php } ?>
 		</article>
 
 		<?php
