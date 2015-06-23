@@ -13,7 +13,8 @@ if ($conn->connect_error) {
   trigger_error('Database connection failed: '  . $conn->connect_error, E_USER_ERROR);
 }
 
-$name_arr = explode(' ', $_POST['Name']);
+$full_name = rtrim($_POST['Name']);
+$name_arr = explode(' ', $full_name);
 $last_name = array_pop($name_arr);
 $first_name = implode(' ', $name_arr);
 
@@ -83,8 +84,8 @@ function _submit_to_leadperfect($data)
 {
 	$comments = 'Model: ' . $data['Model'] . ', Jets: ' . $data['Jets'] . ', Shell: ' . $data['Shell'] . ', Cabinet: ' . $data['Cabinet'] . ', Options: ' . $data['Options']; // options are comma separated values
 	$array = array(
-	'Fname'      => $data['Name'],
-	'Lname'      => $data['Name'],
+	'Fname'      => $first_name,
+	'Lname'      => $last_name,
 	'Address1'   => $data['Address'],
 	'Address2'   => '',
 	'City'       => $_POST['City'],
