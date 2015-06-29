@@ -114,6 +114,19 @@ margin-bottom: 20px;
 	} 
 }
 
+
+@media only screen and (max-width : 767px) {
+	
+	.only-desktop
+	{
+		display: none !important;
+	}
+	
+	.only-phone
+	{
+		display: block !important;
+	}
+}
 @media only screen and (max-width : 480px) {
 	.warrantycol2 {
 		float: none;
