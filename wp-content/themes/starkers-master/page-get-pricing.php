@@ -19,7 +19,9 @@
 
 		<div class="primary">
 			<article>
-				<?=apply_filters('the_content', $post->post_content) ?>
+				<?php the_content();
+				/* <?=apply_filters('the_content', $post->post_content) ?> */
+				?>
 			</article>
 		</div>
 
