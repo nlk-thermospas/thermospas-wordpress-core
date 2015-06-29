@@ -40,6 +40,7 @@
 
 	add_filter( 'body_class', array( 'Starkers_Utilities', 'add_slug_to_body_class' ) );
 
+	add_filter('gform_confirmation_anchor','theme_gform_confirmation_anchor');
 	add_filter('gform_confirmation_anchor_1','theme_gform_confirmation_anchor_1');
 	add_filter('gform_confirmation_anchor_2','theme_gform_confirmation_anchor_2');
 	add_filter('gform_confirmation_anchor_3','theme_gform_confirmation_anchor_3');
@@ -104,6 +105,9 @@
 	}
 
 
+	function theme_gform_confirmation_anchor($enabled) {
+		return false;
+	}
 	function theme_gform_confirmation_anchor_1($enabled) {
 		return false;
 	}
