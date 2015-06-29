@@ -27,7 +27,7 @@
 			<article>
 				<div class="grid getpricingnew">
 				  <div class="grid__col grid__col--6-of-12">
-				    <?= apply_filters('the_content', $post->post_content) ?>
+				    <?=apply_filters('the_content', $post->post_content) ?>
 				  </div>
 				  <div class="grid__col grid__col--6-of-12">
 				    <div class="hero-box">
