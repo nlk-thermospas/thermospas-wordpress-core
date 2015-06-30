@@ -25,7 +25,7 @@
 
 		<div class="primary">
 			<article>
-				<div class="grid getpricingnew">
+				<div class="grid getpricingnew get-pricing">
 				  <div class="grid__col grid__col--6-of-12">
 				    <?php the_content(); ?>
 				  </div>
