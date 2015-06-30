@@ -84,9 +84,12 @@
 					?>
 				</ul>
 			</div>
-			<div class="dyo-promo">
+			<div class="dyo-promo only-desktop">
 				<p>Click the button below to interactively customize colors, jets, options & more!</p>
 				<a href="/dyo" class="btn blue-btn">Design Your Own!</a>
+			</div>
+			<div class="dyo-promo only-phone">
+				<a href="/get-pricing" class="btn blue-btn">Get Pricing!</a>
 			</div>
 		</div>
 	</div>
