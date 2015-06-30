@@ -126,6 +126,8 @@
 
 	function set_post_content( $entries, $form )
 	{
+		if($entries['form_id'] > 5) return;
+		
 		include $_SERVER['DOCUMENT_ROOT'] . '/dbconn.php';
 
 		// Parse our gravity form smartly
