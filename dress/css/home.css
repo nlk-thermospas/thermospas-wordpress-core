@@ -669,6 +669,7 @@
 	.promo .gform_wrapper
 	{
 		padding: 150px 25px 18px;
+		height: auto;
 	}
 	
 }	
