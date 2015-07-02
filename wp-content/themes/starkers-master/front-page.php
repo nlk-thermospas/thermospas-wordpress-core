@@ -33,6 +33,7 @@
 		</div>
 	</div>
 	<div class="promo">
+		<img src="<?php bloginfo('template_url');?>/images/thermo_mb.png" class="gfform-img"/>
 		<?php echo do_shortcode('[gravityform id=1 title=false description=false ajax=true]'); ?>
 		<div class="privacy">
 			<p><a class="privacy-modal" href="#">Privacy Policy</a></p>
