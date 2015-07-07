@@ -40,6 +40,7 @@
 
 	add_filter( 'body_class', array( 'Starkers_Utilities', 'add_slug_to_body_class' ) );
 
+	add_filter('gform_confirmation_anchor','theme_gform_confirmation_anchor');
 	add_filter('gform_confirmation_anchor_1','theme_gform_confirmation_anchor_1');
 	add_filter('gform_confirmation_anchor_2','theme_gform_confirmation_anchor_2');
 	add_filter('gform_confirmation_anchor_3','theme_gform_confirmation_anchor_3');
@@ -104,6 +105,9 @@
 	}
 
 
+	function theme_gform_confirmation_anchor($enabled) {
+		return false;
+	}
 	function theme_gform_confirmation_anchor_1($enabled) {
 		return false;
 	}
@@ -122,6 +126,8 @@
 
 	function set_post_content( $entries, $form )
 	{
+		if($entries['form_id'] > 5) return;
+		
 		include $_SERVER['DOCUMENT_ROOT'] . '/dbconn.php';
 
 		// Parse our gravity form smartly
@@ -269,7 +275,7 @@
 			// load bvpai.js
 			if ( is_page('reviews') ) {
 				//wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
-				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
+				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/en_US/bvapi.js', array(), '1.0', false);
 			}
 			else {
 				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/en_US/bvapi.js', array(), '1.0', false); //staging
