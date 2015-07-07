@@ -635,3 +635,41 @@
         margin-right: 10px;
     }
 }
+
+
+.gfform-img
+{
+	display: none;
+}
+
+@media only screen and (max-width : 767px) {
+	
+	.billboard
+	{
+		display: none !important;
+	}
+	
+	.promo img.gfform-img
+	{
+		max-width: 389px;
+		width: 100%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: -150px;
+	}
+	
+	.promo
+	{
+		float: left;
+		margin-left: 20px;
+		margin-top: 0px;
+	}
+	
+	.promo .gform_wrapper
+	{
+		padding: 150px 25px 18px;
+		height: auto !important;
+	}
+	
+}	
