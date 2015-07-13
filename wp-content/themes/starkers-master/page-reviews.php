@@ -16,7 +16,7 @@
 
 $bv = new BV(
     array(
-        'deployment_zone_id' => 'Main_Site-en_US',
+        'deployment_zone_id' => 'ReadOnly-en_US',
         'product_id' => "TS-ALL-REVIEWS", // must match ExternalID in the BV product feed
         'cloud_key' => 'thermospas-b54386e4fe2a2ebd9478b68fca20be5b',
         'staging' => false
@@ -49,9 +49,9 @@ if($main != "") {
 			<script>
 				$BV.configure("global", { "productId" : "TS-ALL-REVIEWS" });
 				$BV.ui( 'rr', 'show_reviews', {
-				doShowContent : function () {
-				    // If the container is hidden (such as behind a tab), put code here to make it visible (open the tab).
-				}
+					doShowContent : function () {
+				    	// If the container is hidden (such as behind a tab), put code here to make it visible (open the tab).
+					}
 				});
 				function submitGeneric() {
 				    $BV.ui(
@@ -64,7 +64,7 @@ if($main != "") {
 				<?=apply_filters('the_content', $post->post_content) ?>
 			<div itemscope itemtype="http://schema.org/Product">
 				<meta itemprop="name" content="<?php echo the_title(); ?>" />
-				<button type="button" class="button btn red-btn bv-write-review bv-focusable bv-submission-button" onclick="submitGeneric()">Write a Review</button>
+				<button type="button" class="button btn red-btn bv-write-review bv-focusable bv-submission-button" onclick="submitGeneric();">Write a Review</button>
 				<div id="BVRRContainer">
 		    		<?php echo $bv->reviews->getContent();?>
 				</div>
