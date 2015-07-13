@@ -274,8 +274,8 @@
 			$root = ( get_bloginfo('url') == 'http://www.thermospas.com' ) ? '//display.ugc.bazaarvoice.com' : '//display-stg.ugc.bazaarvoice.com';
 			// load bvpai.js
 			if ( is_page('reviews') ) {
-				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
-				//wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/en_US/bvapi.js', array(), '1.0', false);
+				//wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/ReadOnly/en_US/bvapi.js', array(), '1.0', false);
+				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/en_US/bvapi.js', array(), '1.0', false);
 			}
 			else {
 				wp_enqueue_script( 'bvapi-js', $root . '/static/thermospas/en_US/bvapi.js', array(), '1.0', false); //staging
