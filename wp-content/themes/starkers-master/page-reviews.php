@@ -60,16 +60,11 @@ if($main != "") {
 				        { "categoryId" : "TS" }
 				    );
 				}
-				(function($){
-					$('button.bv-submission-button').click(function(){
-						submitGeneric();
-					});
-				})(jQuery);
 			</script>
 				<?=apply_filters('the_content', $post->post_content) ?>
 			<div itemscope itemtype="http://schema.org/Product">
 				<meta itemprop="name" content="<?php echo the_title(); ?>" />
-				<!--button type="button" class="bv-write-review bv-focusable bv-submission-button" onclick="submitGeneric()">Write a Review</button-->
+				<button type="button" class="button btn red-btn bv-write-review bv-focusable bv-submission-button" onclick="submitGeneric()">Write a Review</button>
 				<div id="BVRRContainer">
 		    		<?php echo $bv->reviews->getContent();?>
 				</div>
