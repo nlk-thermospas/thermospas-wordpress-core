@@ -95,204 +95,204 @@
 	</div>
 
 	<div class="information">
-		<div class="summary">
-			<h2 class="shadow-header"><?php the_title(); ?> Summary</h2>
-			<p><?php $summary = pods_field('summary'); echo $summary[0]; ?></p>
-		</div>
-		<div class="more-information">
-			<h2 class="shadow-header"><?php the_title(); ?> Details</h2>
-			<div class="tabs">
-				<ul class="tab-nav">
-					<li><a href="#features">Features</a></li>
-					<li><a href="#options">Options</a></li>
-					<li><a href="#specs">Specs</a></li>
-					<li><a href="#warranty">Warranty</a></li>
-					<li><a href="#reviews">Reviews</a></li>
-				</ul>
-				<div id="features" class="tab">
-					<p><?php $features_text = pods_field('features_text'); echo $features_text[0]; ?></p>
-					<ul class="features">
-						<?php $feature = pods_field('feature_1'); ?>
-						<?php if($feature != null) { ?>
-						<li>
-							<?php
-							$featureImage = get_post_meta($feature['ID'], 'image', true);
-							$featureText = get_post_meta($feature['ID'], 'text', true);
-							$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
-							echo $featureText;
-							?>
-						</li>
-						<?php } ?>
-						<?php $feature = pods_field('feature_2'); ?>
-						<?php if($feature != null) { ?>
-						<li>
-							<?php
-							$featureImage = get_post_meta($feature['ID'], 'image', true);
-							$featureText = get_post_meta($feature['ID'], 'text', true);
-							$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
-							echo $featureText;
-							?>
-						</li>
-						<?php } ?>
-						<?php $feature = pods_field('feature_3'); ?>
-						<?php if($feature != null) { ?>
-						<li>
-							<?php
-							$featureImage = get_post_meta($feature['ID'], 'image', true);
-							$featureText = get_post_meta($feature['ID'], 'text', true);
-							$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
-							echo $featureText;
-							?>
-						</li>
-						<?php } ?>
-						<?php $feature = pods_field('feature_4'); ?>
-						<?php if($feature != null) { ?>
-						<li>
-							<?php
-							$featureImage = get_post_meta($feature['ID'], 'image', true);
-							$featureText = get_post_meta($feature['ID'], 'text', true);
-							$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
-							echo $featureText;
-							?>
-						</li>
-						<?php } ?>
-						<?php $feature = pods_field('feature_5'); ?>
-						<?php if($feature != null) { ?>
-						<li>
-							<?php
-							$featureImage = get_post_meta($feature['ID'], 'image', true);
-							$featureText = get_post_meta($feature['ID'], 'text', true);
-							$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
-							echo $featureText;
-							?>
-						</li>
-						<?php } ?>
-						<?php $feature = pods_field('feature_6'); ?>
-						<?php if($feature != null) { ?>
-						<li>
-							<?php
-							$featureImage = get_post_meta($feature['ID'], 'image', true);
-							$featureText = get_post_meta($feature['ID'], 'text', true);
-							$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
-							echo $featureText;
-							?>
-						</li>
-						<?php } ?>
+		<div itemscope itemtype="http://schema.org/Product">
+			<div class="summary">
+				<h2 class="shadow-header"><?php the_title(); ?> Summary</h2>
+				<p><?php $summary = pods_field('summary'); echo $summary[0]; ?></p>
+			</div>
+			<div class="more-information">
+				<h2 class="shadow-header"><?php the_title(); ?> Details</h2>
+				<div class="tabs">
+					<ul class="tab-nav">
+						<li><a href="#features">Features</a></li>
+						<li><a href="#options">Options</a></li>
+						<li><a href="#specs">Specs</a></li>
+						<li><a href="#warranty">Warranty</a></li>
+						<li><a href="#reviews">Reviews</a></li>
 					</ul>
-					<?php $more_features = pods_field('more_standard_features'); ?>
-					<?=apply_filters('the_content', $more_features[0]) ?>
-				</div>
-				<div id="options" class="tab">
-					<p><?php $options_text = pods_field('options_text'); echo $options_text[0]; ?></p>
-					<ul class="options">
-						<?php $option = pods_field('option_1'); ?>
-						<?php if($option != null) { ?>
-						<li>
-							<?php
-							$optionImage = get_post_meta($option['ID'], 'image', true);
-							$optionText = get_post_meta($option['ID'], 'text', true);
-							$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
-							echo $optionText;
-							echo "</li>";
-							?>
-						</li>
-						<?php } ?>
-						<?php $option = pods_field('option_2'); ?>
-						<?php if($option != null) { ?>
-						<li>
-							<?php
-							$optionImage = get_post_meta($option['ID'], 'image', true);
-							$optionText = get_post_meta($option['ID'], 'text', true);
-							$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
-							echo $optionText;
-							echo "</li>";
-							?>
-						</li>
-						<?php } ?>
-						<?php $option = pods_field('option_3'); ?>
-						<?php if($option != null) { ?>
-						<li>
-							<?php
-							$optionImage = get_post_meta($option['ID'], 'image', true);
-							$optionText = get_post_meta($option['ID'], 'text', true);
-							$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
-							echo $optionText;
-							echo "</li>";
-							?>
-						</li>
-						<?php } ?>
-						<?php $option = pods_field('option_4'); ?>
-						<?php if($option != null) { ?>
-						<li>
-							<?php
-							$optionImage = get_post_meta($option['ID'], 'image', true);
-							$optionText = get_post_meta($option['ID'], 'text', true);
-							$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
-							echo $optionText;
-							echo "</li>";
-							?>
-						</li>
-						<?php } ?>
-						<?php $option = pods_field('option_5'); ?>
-						<?php if($option != null) { ?>
-						<li>
-							<?php
-							$optionImage = get_post_meta($option['ID'], 'image', true);
-							$optionText = get_post_meta($option['ID'], 'text', true);
-							$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
-							echo $optionText;
-							echo "</li>";
-							?>
-						</li>
-						<?php } ?>
-						<?php $option = pods_field('option_6'); ?>
-						<?php if($option != null) { ?>
-						<li>
-							<?php
-							$optionImage = get_post_meta($option['ID'], 'image', true);
-							$optionText = get_post_meta($option['ID'], 'text', true);
-							$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
-							echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
-							echo $optionText;
-							echo "</li>";
-							?>
-						</li>
-						<?php } ?>
-					</ul>
-					<?php $more_options = pods_field('more_available_options'); ?>
-					<?=apply_filters('the_content', $more_options[0]) ?>
-				</div>
-				<div id="specs" class="tab">
-					<?php $specs = pods_field('specs'); ?>
-					<?=apply_filters('the_content', $specs[0]) ?>
-				</div>
-				<div id="warranty" class="tab">
-					<?php $warranty = pods_field('warranty'); ?>
-					<?=apply_filters('the_content', $warranty[0]) ?>
-				</div>
-				<div id="reviews" class="tab">
-					<div itemscope itemtype="http://schema.org/Product">
-						<meta itemprop="name" content="<?php echo the_title(); ?>" />
-						<div id="BVRRContainer"></div>
-						<script type="text/javascript">
-						  $BV.ui( 'rr', 'show_reviews', {
-						    doShowContent : function () {
-						      // If the container is hidden (such as behind a tab), put code here to make it visible
-						      // (open the tab).
-						    }
-						  });
-						</script>
+					<div id="features" class="tab">
+						<p><?php $features_text = pods_field('features_text'); echo $features_text[0]; ?></p>
+						<ul class="features">
+							<?php $feature = pods_field('feature_1'); ?>
+							<?php if($feature != null) { ?>
+							<li>
+								<?php
+								$featureImage = get_post_meta($feature['ID'], 'image', true);
+								$featureText = get_post_meta($feature['ID'], 'text', true);
+								$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
+								echo $featureText;
+								?>
+							</li>
+							<?php } ?>
+							<?php $feature = pods_field('feature_2'); ?>
+							<?php if($feature != null) { ?>
+							<li>
+								<?php
+								$featureImage = get_post_meta($feature['ID'], 'image', true);
+								$featureText = get_post_meta($feature['ID'], 'text', true);
+								$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
+								echo $featureText;
+								?>
+							</li>
+							<?php } ?>
+							<?php $feature = pods_field('feature_3'); ?>
+							<?php if($feature != null) { ?>
+							<li>
+								<?php
+								$featureImage = get_post_meta($feature['ID'], 'image', true);
+								$featureText = get_post_meta($feature['ID'], 'text', true);
+								$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
+								echo $featureText;
+								?>
+							</li>
+							<?php } ?>
+							<?php $feature = pods_field('feature_4'); ?>
+							<?php if($feature != null) { ?>
+							<li>
+								<?php
+								$featureImage = get_post_meta($feature['ID'], 'image', true);
+								$featureText = get_post_meta($feature['ID'], 'text', true);
+								$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
+								echo $featureText;
+								?>
+							</li>
+							<?php } ?>
+							<?php $feature = pods_field('feature_5'); ?>
+							<?php if($feature != null) { ?>
+							<li>
+								<?php
+								$featureImage = get_post_meta($feature['ID'], 'image', true);
+								$featureText = get_post_meta($feature['ID'], 'text', true);
+								$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
+								echo $featureText;
+								?>
+							</li>
+							<?php } ?>
+							<?php $feature = pods_field('feature_6'); ?>
+							<?php if($feature != null) { ?>
+							<li>
+								<?php
+								$featureImage = get_post_meta($feature['ID'], 'image', true);
+								$featureText = get_post_meta($feature['ID'], 'text', true);
+								$featureAlt = get_post_meta($featureImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $featureImage['guid'] . "\" alt=\"" . $featureAlt . "\" />";
+								echo $featureText;
+								?>
+							</li>
+							<?php } ?>
+						</ul>
+						<?php $more_features = pods_field('more_standard_features'); ?>
+						<?=apply_filters('the_content', $more_features[0]) ?>
+					</div>
+					<div id="options" class="tab">
+						<p><?php $options_text = pods_field('options_text'); echo $options_text[0]; ?></p>
+						<ul class="options">
+							<?php $option = pods_field('option_1'); ?>
+							<?php if($option != null) { ?>
+							<li>
+								<?php
+								$optionImage = get_post_meta($option['ID'], 'image', true);
+								$optionText = get_post_meta($option['ID'], 'text', true);
+								$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
+								echo $optionText;
+								echo "</li>";
+								?>
+							</li>
+							<?php } ?>
+							<?php $option = pods_field('option_2'); ?>
+							<?php if($option != null) { ?>
+							<li>
+								<?php
+								$optionImage = get_post_meta($option['ID'], 'image', true);
+								$optionText = get_post_meta($option['ID'], 'text', true);
+								$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
+								echo $optionText;
+								echo "</li>";
+								?>
+							</li>
+							<?php } ?>
+							<?php $option = pods_field('option_3'); ?>
+							<?php if($option != null) { ?>
+							<li>
+								<?php
+								$optionImage = get_post_meta($option['ID'], 'image', true);
+								$optionText = get_post_meta($option['ID'], 'text', true);
+								$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
+								echo $optionText;
+								echo "</li>";
+								?>
+							</li>
+							<?php } ?>
+							<?php $option = pods_field('option_4'); ?>
+							<?php if($option != null) { ?>
+							<li>
+								<?php
+								$optionImage = get_post_meta($option['ID'], 'image', true);
+								$optionText = get_post_meta($option['ID'], 'text', true);
+								$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
+								echo $optionText;
+								echo "</li>";
+								?>
+							</li>
+							<?php } ?>
+							<?php $option = pods_field('option_5'); ?>
+							<?php if($option != null) { ?>
+							<li>
+								<?php
+								$optionImage = get_post_meta($option['ID'], 'image', true);
+								$optionText = get_post_meta($option['ID'], 'text', true);
+								$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
+								echo $optionText;
+								echo "</li>";
+								?>
+							</li>
+							<?php } ?>
+							<?php $option = pods_field('option_6'); ?>
+							<?php if($option != null) { ?>
+							<li>
+								<?php
+								$optionImage = get_post_meta($option['ID'], 'image', true);
+								$optionText = get_post_meta($option['ID'], 'text', true);
+								$optionAlt = get_post_meta($optionImage['ID'], '_wp_attachment_image_alt', true);
+								echo "<img src=\"" . $optionImage['guid'] . "\" alt=\"" . $optionAlt . "\" />";
+								echo $optionText;
+								echo "</li>";
+								?>
+							</li>
+							<?php } ?>
+						</ul>
+						<?php $more_options = pods_field('more_available_options'); ?>
+						<?=apply_filters('the_content', $more_options[0]) ?>
+					</div>
+					<div id="specs" class="tab">
+						<?php $specs = pods_field('specs'); ?>
+						<?=apply_filters('the_content', $specs[0]) ?>
+					</div>
+					<div id="warranty" class="tab">
+						<?php $warranty = pods_field('warranty'); ?>
+						<?=apply_filters('the_content', $warranty[0]) ?>
+					</div>
+					<div id="reviews" class="tab">
+							<meta itemprop="name" content="<?php echo the_title(); ?>" />
+							<div id="BVRRContainer"></div>
+							<script type="text/javascript">
+							  $BV.ui( 'rr', 'show_reviews', {
+							    doShowContent : function () {
+							      // If the container is hidden (such as behind a tab), put code here to make it visible
+							      // (open the tab).
+							    }
+							  });
+							</script>
 					</div>
 				</div>
 			</div>
