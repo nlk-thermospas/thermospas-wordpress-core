@@ -70,6 +70,7 @@
 							</ul>
 						</li>
                         <li><a href="/dyo/">Design Your Own</a>
+                        <li><a href="/reviews/">Reviews</a>
 					</ul>
 				</li>
 				<?php if($uriArr[1] == "why-get-a-hot-tub") { ?>
