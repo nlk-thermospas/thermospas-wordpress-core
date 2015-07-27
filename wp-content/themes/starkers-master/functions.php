@@ -315,21 +315,22 @@
 	//add_action('wp_head', 'pixel_bazaarinvoice');
 
 /** END BazaarVoice **/
-/*
+
 function thermo_server() {
 	$url = get_bloginfo('url');
+	$server = 'live';
 	switch ( $url ) {
-		case 'http://new.thermospas.com' :
-		case 'http://new.thermospas.com/' :
-			return 'dev';
+		case 'http://new.thermospas.com':
+		case 'http://new.thermospas.com/':
+			$server = 'dev';
 			break;
-		case 'http://www.thermospas.com' :
-		case 'http://www.thermospas.com/' :
+		case 'http://www.thermospas.com':
+		case 'http://www.thermospas.com/':
 		default:
-			return 'live';
+			$server = 'live';
 			break;
 	}
-	return 'live';
+	return $server;
 }
 
 /* Remove EMOJI CODE */
