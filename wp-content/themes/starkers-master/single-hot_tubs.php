@@ -8,12 +8,27 @@
  * @subpackage 	Starkers
  * @since 		Starkers 4.0
  */
+
+Starkers_Utilities::get_template_parts( array( 'html-header', 'header' ) );
+
+if ( have_posts() ) while ( have_posts() ) : the_post();
+
+$bazaarVoiceID = pods_field('bazaarvoice_id');
+if ( function_exists('thermo_server') ) {
+	$is_staging = ( thermo_server() == 'dev' ? TRUE : FALSE );
+} else {
+	$is_staging = FALSE;
+}
+$bv = new BV(
+    array(
+        'deployment_zone_id' => 'Main_Site-en_US',
+        'product_id' => $bazaarVoiceID[0], // must match ExternalID in the BV product feed
+        'cloud_key' => 'thermospas-b54386e4fe2a2ebd9478b68fca20be5b',
+        'staging' => $is_staging
+        )
+    );
+
 ?>
-<?php Starkers_Utilities::get_template_parts( array( 'html-header', 'header' ) ); ?>
-
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
-<?php $bazaarVoiceID = pods_field('bazaarvoice_id'); ?>
 
 <script type="text/javascript">
 	$BV.configure('global', { productId : '<?=$bazaarVoiceID[0]?>' });
@@ -284,7 +299,7 @@
 					</div>
 					<div id="reviews" class="tab">
 							<meta itemprop="name" content="<?php echo the_title(); ?>" />
-							<div id="BVRRContainer"></div>
+							<div id="BVRRContainer"><?php echo $bv->reviews->getContent();?></div>
 							<script type="text/javascript">
 							  $BV.ui( 'rr', 'show_reviews', {
 							    doShowContent : function () {

@@ -316,6 +316,22 @@
 
 /** END BazaarVoice **/
 
+function thermo_server() {
+	$url = get_bloginfo('url');
+	switch ( $url ) {
+		case 'http://new.thermospas.com' :
+		case 'http://new.thermospas.com/' :
+			return 'dev';
+			break;
+		case 'http://www.thermospas.com' :
+		case 'http://www.thermospas.com/' :
+		default:
+			return 'live';
+			break;
+	}
+	return 'live';
+}
+
 /* Remove EMOJI CODE */
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
