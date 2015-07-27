@@ -315,7 +315,7 @@
 	//add_action('wp_head', 'pixel_bazaarinvoice');
 
 /** END BazaarVoice **/
-
+/*
 function thermo_server() {
 	$url = get_bloginfo('url');
 	switch ( $url ) {

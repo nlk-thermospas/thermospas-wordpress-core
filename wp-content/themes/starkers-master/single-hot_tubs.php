@@ -15,7 +15,8 @@ if ( have_posts() ) while ( have_posts() ) : the_post();
 
 $bazaarVoiceID = pods_field('bazaarvoice_id');
 if ( function_exists('thermo_server') ) {
-	$is_staging = ( thermo_server() == 'dev' ? TRUE : FALSE );
+	$thermo_server = thermo_server();
+	$is_staging = ( $thermo_server == 'dev' ? TRUE : FALSE );
 } else {
 	$is_staging = FALSE;
 }
