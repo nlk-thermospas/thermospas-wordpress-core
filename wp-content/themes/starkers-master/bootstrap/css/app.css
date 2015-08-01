@@ -45,7 +45,7 @@ body {
 	background: url('../images/brochure_banner.jpg') 0 0 no-repeat transparent;
 	padding-top: 35px;
 	background-size: cover;
-	min-height: 350px;
+	min-height: 605px;
 }
 
 .btn.btn-primary.btn-broucher {
@@ -214,7 +214,7 @@ body {
 }
 
 .eachContent {
-	margin-top: 55px;
+	xmargin-top: 55px;
 }
 
 .formcontent .frmbtncontainer p {
@@ -238,7 +238,8 @@ body {
 	vertical-align: baseline;
 }
 .freebrochure img {
-	margin-top: -35px;
+	margin-top: -86px;
+    margin-left: -40px;
 }
 
 .margintop20 {
@@ -346,17 +347,22 @@ body {
 }
 
 .container.bigcontainer .eachContent:first-child {
-	margin-top: 55px;
+	xmargin-top: 55px;
 }
 
 .container.bigcontainer .eachContent:last-child {
-	margin-bottom: 60px;
-	margintop: 30px;
+	xmargin-bottom: 60px;
+	xmargin-top: 30px;
 }
 
 .container.bigcontainer .eachContent img {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.marginbottom50
+{
+	margin-bottom: 50px;
 }
 
 .book {
@@ -1098,6 +1104,13 @@ footer ul.social li a, .footer ul.social li a {
 }
 footer ul.social li a:hover {}
 
+@media (max-width: 768px) {
+	.margintopm30
+	{
+		margin-top: -30px !important;
+	}
+}
+
 @media (min-width: 768px) {
 	
 	.formmenu .gform_button.button
@@ -1117,6 +1130,17 @@ footer ul.social li a:hover {}
 
 @media (max-width: 991px) {
 
+	.freebrochure img
+	{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	.formmenu .gform_button.button
+	{
+		right: 40px;
+	}
 	
 	.formcontent .frmbtncontainer p {
 		text-align: left;
@@ -1183,7 +1207,7 @@ footer ul.social li a:hover {}
 	
 	.formcontent
 	{
-		background: #EEE;
+		xbackground: #EEE;
 	}
 }
 

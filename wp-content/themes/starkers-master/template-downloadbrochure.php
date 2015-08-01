@@ -52,10 +52,10 @@
 			<section class="wrapper formcase" id="formwrap">
 				<div class="container">
 					<div class="row formcontent" id="formcontent">
-							<div class="col-xs-12 col-sm-3 col-md-3 freebrochure">
-								<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/thermo_brochure.png" class="img-responsive "/>
+							<div class="col-xs-12 col-sm-12 col-md-3 freebrochure">
+								<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/brochure_top_callout.png"/>
 							</div>
-							<div class="col-xs-12 col-sm-9 col-md-9 formmenu">
+							<div class="col-xs-12 col-sm-12 col-md-9 formmenu">
 								<?php echo do_shortcode('[gravityform id="10" name="Download Brochure" title="false" description="false"]'); ?>
 							</div>
 					</div>
@@ -66,10 +66,10 @@
 			</section>
 		</div>
 		<section class="listimg" id="contentlist">
-			<div class="container">
+			<div class="container bigcontainer">
 				<div class="row eachContent">
 					<div class="col-xs-12 col-sm-6 col-md-6">
-						<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/brochure_spread1.jpg" class="img-responsive float-right-md"/>
+						<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/brochure_spread_11.jpg" class="img-responsive float-right-md"/>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 content contenttext">
 						<h2>See Spa Models at a Glance</h2>
@@ -86,8 +86,6 @@
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div class="container bigcontainer">
 				<div class="row eachContent">
 					<div class="col-xs-12 col-sm-6 col-md-5 hydrotherapy contenttext col-md-offset-1">
 						<h2>Explore Unique</br> ThermoSpas&reg; Features</h2>
@@ -104,12 +102,14 @@
 						</ul>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6 carefree ">
-						<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/brochure_spread2.jpg" class="img-responsive float-left-md"/>
+						<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/brochure_spread_12.jpg" class="img-responsive float-left-md margintopm30"/>
 					</div>
-				</div>	
+				</div>
+			</div>
+			<div class="container marginbottom50">
 				<div class="row eachContent">
 					<div class="col-xs-12 col-sm-6 col-md-5">
-						<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/couple_spa.jpg" class="img-responsive float-right-md"/>
+						<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/couple_image_shadow.jpg" class="img-responsive float-right-md"/>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-7 recommend contenttext">
 						<h2>Access Essential<br/>ThermoSpas&reg; Resources</h2>

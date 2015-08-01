@@ -38,7 +38,7 @@
 			});
 			
 			jQuery(document).ready(function(){
-				
+				/*
 				var w=window,d=document,e=d.documentElement,g=d.getElementsByTagName('body')[0],x=w.innerWidth||e.clientWidth||g.clientWidth,y=w.innerHeight||e.clientHeight||g.clientHeight;
 				if(x >= 768)
 				{
@@ -46,7 +46,7 @@
 					jQuery('#formwrap').css('position', 'absolute');
 					jQuery('#formwrap').css('top', y-258);
 					jQuery('#formwrap').css('height', 172);
-				}
+				}*/
 		});
 		</script>
 		<?php /* Removed [https://ninthlink.atlassian.net/browse/THERMO-42]
