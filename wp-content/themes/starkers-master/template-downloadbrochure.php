@@ -62,7 +62,7 @@
 								<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/brochure_top_callout.png"/>
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-9 formmenu">
-								<?php echo do_shortcode('[gravityform id="10" name="Download Brochure" title="false" description="false"]'); ?>
+								<?php echo do_shortcode('[gravityform id="9" name="Download Brochure" title="false" description="false"]'); ?>
 							</div>
 					</div>
 					<div class="more-fold">
