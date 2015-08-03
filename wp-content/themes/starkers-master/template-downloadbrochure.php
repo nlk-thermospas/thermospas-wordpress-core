@@ -19,7 +19,13 @@
 		jQuery(document).ready(function(){
 			jQuery('.gform_footer').append('<span class="requiredSpan">*Indicates required field</span>');
 		});
-	</script>	
+	</script>
+	<style>
+		body.page-template-template-downloadbrochure-php
+		{
+			opacity:1 !important;filter:alpha(opacity=100) !important; background:none !important;
+		}
+	</style>	
 	<section class="wrapper headerwrap">
 			<div class="container">
 				<div class="row">
@@ -151,7 +157,18 @@
 							</p>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-6">
-							<img src="<?php bloginfo('template_url'); ?>/bootstrap/images/video_testimonial.jpg" class="img-responsive"/>
+							<a href="#" data-toggle="modal" data-target="#iframeVideo"><img src="<?php bloginfo('template_url'); ?>/bootstrap/images/video_test2.png" class="img-responsive"/></a>
+							<div class="modal fade" id="iframeVideo" tabindex="-1" role="dialog" aria-labelledby="iframeVideoLabel">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-body">
+							      	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							        <iframe src="//www.youtube.com/embed/KvsrZTVev2c?rel=0&amp;controls=1&amp;showinfo=1" allowfullscreen="" frameborder="0" height="315" width="560"></iframe>
+							        <p>Dr. Michael and Shannon Holloway describe how their ThermoSpas<sup>®</sup> hot tub has become the family hub.</p>
+							      </div>
+							    </div><!-- /.modal-content -->
+							  </div><!-- /.modal-dialog -->
+							</div><!-- /.modal -->
 						</div>
 					</div
 				</div>
