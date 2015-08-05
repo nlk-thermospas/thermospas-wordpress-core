@@ -117,7 +117,11 @@
 			   scr.parentNode.insertBefore(ss, scr);
 			})();
 		</script>
-
+		<script type="text/javascript">
+			jQuery(document).ready(function(){
+				jQuery('input.datepicker').attr('readonly', 'readonly');
+			});
+		</script>
 	</head>
 	<body <?php body_class(); ?>>
 
