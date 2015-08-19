@@ -1,11 +1,16 @@
 <?php
+/**
+ * @package GoogleAnalytics\Admin
+ */
 
 /**
  * This class is for the backend
  */
-
 class Yoast_GA_Admin_Form {
 
+	/**
+	 * @var string $form_namespace
+	 */
 	private static $form_namespace;
 
 	/**
@@ -36,11 +41,15 @@ class Yoast_GA_Admin_Form {
 	 *
 	 * @return null|string
 	 */
-	public static function end_form( $button_label = 'Save changes', $name = 'submit', $onclick = null ) {
+	public static function end_form( $button_label = null, $name = 'submit', $onclick = null ) {
+		if ( $button_label === null ) {
+			$button_label = __( 'Save changes', 'google-analytics-for-wordpress' );
+		}
+
 		$output = null;
 		$output .= '<div class="ga-form ga-form-input">';
 		$output .= '<input type="submit" name="ga-form-' . $name . '" value="' . $button_label . '" class="button button-primary ga-form-submit" id="yoast-ga-form-submit-' . self::$form_namespace . '"';
-		if( ! is_null( $onclick ) ){
+		if ( ! is_null( $onclick ) ) {
 			$output .= ' onclick="' . $onclick . '"';
 		}
 		$output .= ' />';
@@ -86,19 +95,20 @@ class Yoast_GA_Admin_Form {
 			if ( $input_value == 1 ) {
 				$attributes['checked'] = 'checked';
 			}
-		} else {
-			$attributes['value'] = stripslashes( $input_value );
+		}
+		else {
+			$attributes['value'] = esc_attr( stripslashes( $input_value ) );
 		}
 
 		$input .= '<input ' . self::parse_attributes( $attributes ) . ' />';
 
-		if ( ! is_null( $text_label ) ) {
-			$input .= '<label class="ga-form ga-form-' . $type . '-label" id="yoast-ga-form-label-' . $type . '-textlabel-' . self::$form_namespace . '-' . $id . '" for="yoast-ga-form-' . $type . '-' . self::$form_namespace . '-' . $id . '">' . $text_label . '</label>';
-		}
-
 		// If we get a description, append it to this select field in a new row
 		if ( ! is_null( $description ) ) {
 			$input .= self::show_help( $id, $description );
+		}
+
+		if ( ! is_null( $text_label ) ) {
+			$input .= '<label class="ga-form ga-form-' . $type . '-label" id="yoast-ga-form-label-' . $type . '-textlabel-' . self::$form_namespace . '-' . $id . '" for="yoast-ga-form-' . $type . '-' . self::$form_namespace . '-' . $id . '">' . $text_label . '</label>';
 		}
 
 		$input .= '</div>';
@@ -125,12 +135,13 @@ class Yoast_GA_Admin_Form {
 
 		$select .= '<div class="ga-form ga-form-input">';
 		if ( ! is_null( $title ) ) {
-			$select .= self::label( $id, $title, 'select' ); //'<label class="ga-form ga-form-select-label ga-form-label-left" id="yoast-ga-form-label-select-' . self::$form_namespace . '-' . $id . '">' . $title . ':</label>';
+			$select .= self::label( $id, $title, 'select' ); // '<label class="ga-form ga-form-select-label ga-form-label-left" id="yoast-ga-form-label-select-' . self::$form_namespace . '-' . $id . '">' . $title . ':</label>';
 		}
 
 		if ( $multiple ) {
 			$select .= '<select multiple name="' . $name . '[]" id="yoast-ga-form-select-' . self::$form_namespace . '-' . $id . '" class="ga-multiple">';
-		} else {
+		}
+		else {
 			$select .= '<select data-placeholder="' . $empty_text . '" name="' . $name . '" id="yoast-ga-form-select-' . self::$form_namespace . '-' . $id . '">';
 			if ( ! is_null( $empty_text ) ) {
 				$select .= '<option></option>';
@@ -142,10 +153,10 @@ class Yoast_GA_Admin_Form {
 			foreach ( $values as $optgroup => $value ) {
 				if ( ! empty( $value['items'] ) ) {
 					$select .= self::create_optgroup( $optgroup, $value, $select_value );
-				} else {
+				}
+				else {
 					$select .= self::option( $select_value, $value );
 				}
-
 			}
 		}
 		$select .= '</select>';
@@ -203,13 +214,15 @@ class Yoast_GA_Admin_Form {
 	private static function option( $select_value, $value ) {
 
 		if ( is_array( $select_value ) ) {
-			if ( in_array( $value['id'], $select_value ) ) {
-				return '<option value="' . $value['id'] . '" selected="selected">' . stripslashes( $value['name'] ) . '</option>';
-			} else {
-				return '<option value="' . $value['id'] . '">' . stripslashes( $value['name'] ) . '</option>';
+			if ( in_array( esc_attr( $value['id'] ), $select_value ) ) {
+				return '<option value="' . esc_attr( $value['id'] ) . '" selected="selected">' . esc_attr( stripslashes( $value['name'] ) ) . '</option>';
 			}
-		} else {
-			return '<option value="' . $value['id'] . '" ' . selected( $select_value, $value['id'], false ) . '>' . stripslashes( $value['name'] ) . '</option>';
+			else {
+				return '<option value="' . esc_attr( $value['id'] ) . '">' . esc_attr( stripslashes( $value['name'] ) ) . '</option>';
+			}
+		}
+		else {
+			return '<option value="' . esc_attr( $value['id'] ) . '" ' . selected( $select_value, $value['id'], false ) . '>' . esc_attr( stripslashes( $value['name'] ) ) . '</option>';
 		}
 	}
 
@@ -239,10 +252,9 @@ class Yoast_GA_Admin_Form {
 	public static function parse_optgroups( $values ) {
 		$optgroups = array();
 		foreach ( $values as $key => $value ) {
-			foreach ( $value['items'] AS $subitem ) {
-				$optgroups[$subitem['name']]['items'] = $subitem['items'];
+			foreach ( $value['items'] as $subitem ) {
+				$optgroups[ $subitem['name'] ]['items'] = $subitem['items'];
 			}
-
 		}
 
 		return $optgroups;
@@ -251,14 +263,14 @@ class Yoast_GA_Admin_Form {
 	/**
 	 * Creates a label
 	 *
-	 * @param $id
-	 * @param $title
-	 * @param $type
+	 * @param string $id
+	 * @param string $title
+	 * @param string $type
 	 *
 	 * @return string
 	 */
 	private static function label( $id, $title, $type ) {
-		return '<label class="ga-form ga-form-' . $type . '-label ga-form-label-left" id="yoast-ga-form-label-' . $type . '-' . self::$form_namespace . '-' . $id . '">' . $title . ':</label>';
+		return '<label for="' . 'yoast-ga-form-' . $type . '-' . self::$form_namespace . '-' . $id . '" class="ga-form ga-form-' . $type . '-label ga-form-label-left" id="yoast-ga-form-label-' . $type . '-' . self::$form_namespace . '-' . $id . '">' . $title . ':</label>';
 	}
 
 	/**
@@ -271,13 +283,14 @@ class Yoast_GA_Admin_Form {
 	 * @return string
 	 */
 	private static function create_optgroup( $optgroup, $value, $select_value ) {
-		$optgroup = '<optgroup label="' . $optgroup . '">';
+		$optgroup = '<optgroup label="' . esc_attr( $optgroup ) . '">';
 
 		foreach ( $value['items'] as $option ) {
 			if ( ! empty( $option['items'] ) ) {
 
-				$optgroup .= self::create_optgroup( $option['name'], $option, $select_value );
-			} else {
+				$optgroup .= self::create_optgroup( esc_attr( $option['name'] ), $option, $select_value );
+			}
+			else {
 				$optgroup .= self::option( $select_value, $option );
 			}
 		}
@@ -303,7 +316,7 @@ class Yoast_GA_Admin_Form {
 		}
 
 		// Catch a notice if the option doesn't exist, yet
-		return ( isset( $options[$name] ) ) ? $options[$name] : '';
+		return ( isset( $options[ $name ] ) ) ? $options[ $name ] : '';
 	}
 
 	/**
