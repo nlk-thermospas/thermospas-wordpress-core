@@ -1,4 +1,4 @@
-<?
+<?php
 
 
 $url_ref = @$_SERVER['HTTP_REFERER'];
@@ -283,30 +283,30 @@ style="display:none;width:0px;height:0px"></iframe>
 
                     <div>
                       <select name="ht_use" class="customDropDown" id="ht_use">
-                      <? if (strlen($_REQUEST['ht_use']) > 2) { ?>
+                      <?php if (strlen($_REQUEST['ht_use']) > 2) { ?>
                         <option value="<?=$_REQUEST['ht_use']?>" disabled="disabled">Already Selected</option>
-                      <? } else { ?>
+                      <?php } else { ?>
                         <option value="">Primary Hot Tub Use?</option>
                         <option value="relaxation">Relaxation</option>
                         <option value="hydrotherapy">Hydrotherapy/Pain Relief</option>
                         <option value="exercise">Exercise</option>
                         <option value="other">Other </option>
-                      <? } ?>
+                      <?php } ?>
                       </select><div id="ht_useInfo" class="ht_useInfo"></div>
                     </div>
 
                     <div>
                       <select name="ht_seating" class="customDropDown" id="ht_seating">
-                      <? if (strlen($_REQUEST['ht_seating']) > 2) { ?>
+                      <?php if (strlen($_REQUEST['ht_seating']) > 2) { ?>
                         <option value="<?=$_REQUEST['ht_seating']?>" disabled="disabled">Already Selected</option>
-                      <? } else { ?>
+                      <?php } else { ?>
                         <option value="">How many people?</option>
                         <option value="2to3">2-3 person</option>
                         <option value="3to4">3-4 person</option>
                         <option value="4to5">4-5 person</option>
                         <option value="5to6">5-6 person</option>
                         <option value="6to+">6+ person</option>
-                      <? } ?>
+                      <?php } ?>
                       </select>
                       <div id="ht_seatingInfo" class="ht_seatingInfo"></div>
                     </div>
