@@ -16,7 +16,7 @@
 		$testimonials = $testimonials[0];
 	}
 
-	if((count($testimonials) == 1 && !empty($testimonials[0]) || isset($testimonials['ID'])) {
+	if((count($testimonials) == 1 && !empty($testimonials[0])) || isset($testimonials['ID'])) {
 
 		if(isset($testimonials['ID'])) {
 			$testimonial = get_post($testimonials['ID']);
