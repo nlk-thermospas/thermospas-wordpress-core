@@ -88,7 +88,7 @@
     display: block;
     float: left;
     width: 325px;
-    height: 370px;
+    /*height: 370px;*/
     margin-right: 65px;
     margin-top: 42px;
     position: relative;
@@ -396,7 +396,7 @@
     display: block;
     float: left;
     width: 100%;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 .testimonials h2.shadow-header {}
 .testimonials ul {
