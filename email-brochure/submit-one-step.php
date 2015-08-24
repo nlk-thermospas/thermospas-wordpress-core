@@ -2,7 +2,7 @@
 
 include_once "lib/db_connect.php";
 
-
+var_dump($_POST[]);
 
 json_encode( $_POST );
 

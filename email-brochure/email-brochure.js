@@ -93,7 +93,9 @@ $(document).ready(function(){
 	$('#submit_one_page').click(function(){
 		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
 		if( validateName() & validateZipcode() & validatePhone() & validateEmail() ){
-			submit_data_one_step();
+			var ht_token = $("#ht_token").val();
+			submit_data_one_step(ht_token);
+			console.log('submit_data_one_step = true');
 			return true;
 		}else{
 			return false;
@@ -391,7 +393,7 @@ $(document).ready(function(){
 			}
 		});
 	}
-	function submit_data_one_step(){
+	function submit_data_one_step(ht_token){
 		__ss_noform.push(['submit', null]);
 		console.log( $('#ht_form').serialize() );
 		$.ajax({
@@ -400,7 +402,6 @@ $(document).ready(function(){
 			dataType: 'json',
 			data: $('#ht_form').serialize(),
 			complete: function(html){
-				ppcconversion();
 				console.log(html);
 				window.location = "/hot-tub-pricing-results";
 			}
