@@ -90,6 +90,18 @@ $(document).ready(function(){
 		}
 	});
 
+	$('#submit_one_page').click(function(){
+		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
+		if( validateName() & validateZipcode() & validatePhone() & validateEmail() ){
+			var ht_token = $("#ht_token").val();
+			submit_data_one_step(ht_token);
+			console.log('submit_data_one_step = true');
+			return true;
+		}else{
+			return false;
+		}
+	});
+
 	//validation functions
 	function validateEmail(){
 		// if ($('#email-optin').is(':checked')) {
@@ -372,6 +384,20 @@ $(document).ready(function(){
 		console.log( $('#ht_form').serialize() );
 		$.ajax({
 			url: '/email-brochure/submit-step2.php',
+			type: 'POST',
+			dataType: 'json',
+			data: $('#ht_form').serialize(),
+			complete: function(html){
+				console.log(html);
+				window.location = "/hot-tub-pricing-results";
+			}
+		});
+	}
+	function submit_data_one_step(ht_token){
+		__ss_noform.push(['submit', null]);
+		console.log( $('#ht_form').serialize() );
+		$.ajax({
+			url: '/email-brochure/submit-one-step.php',
 			type: 'POST',
 			dataType: 'json',
 			data: $('#ht_form').serialize(),

@@ -121,8 +121,8 @@ HOT TUB SLIDER STYLES
 
 #slide_content { 
 	width:570px; 
-	float:left; 
-	display:block; 
+	/*float:left; */
+	display:inline-block; 
 	}
 	
 #mediaplayer_wrapper {
@@ -136,11 +136,13 @@ HOT TUB SLIDER STYLES
 	border-radius: 5px;
 	background:#e0e0e0;
 	border:#e0e0e0 2px solid;
-    width: 320px;
-	float:right;
+    width: 316px;
+    min-height: 426px;
+	/*float:right;*/
 	margin:0 5px;
 	padding:10px;
-	display:block;
+	display:inline-block;
+	vertical-align: top;
 	z-index:99999;
 	}
 	

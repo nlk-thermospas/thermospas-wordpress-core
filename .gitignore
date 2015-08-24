@@ -1,6 +1,7 @@
 .idea/
 .vagrant/
 dbconn.php
+db_connect.php
 
 
 # Compiled source #
