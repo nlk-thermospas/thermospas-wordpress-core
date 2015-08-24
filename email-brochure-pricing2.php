@@ -12,11 +12,7 @@ if(isset($_GET['SRC'])) $iref = $_GET['SRC'];
 if(strtolower($iref) == 'g') $iref = 'IPPCG';
 if(strtolower($iref) == 'm') $iref = 'IPPCB';
 
-if (isset($_REQUEST['ht_type']) || isset($_REQUEST['ht_location']) || isset($_REQUEST['email'])) {
-
-  if ($_REQUEST['ht_type'] == "NG") {
-    $notice .= "Please selcect a <strong>Hot Tub Type</strong>.\n<BR>";
-  }
+if (isset($_REQUEST['ht_type']) || isset($_REQUEST['email'])) {
 
   if ($_REQUEST['ht_seating'] == "NG") {
     $notice .= "Please selcect a <strong>Hot Tub Seating</strong>.\n<BR>";
@@ -32,16 +28,6 @@ if (isset($_REQUEST['ht_type']) || isset($_REQUEST['ht_location']) || isset($_RE
 
   if ((stristr($_REQUEST['email'], '@') === FALSE) || (stristr($_REQUEST['email'], '.') === FALSE) || strlen($_REQUEST['email']) < 5 || $_REQUEST['email'] == 'Your Email') {
       $notice .= "Please enter a valid <b>Email Address</b>\n<BR>";
-  }
-
-  if (strlen($_REQUEST['address']) < 2 || $_REQUEST['Address'] == 'Your Address') {
-    $notice .= "Please enter your <strong>Address</strong>.\n<BR>";
-  }
-
-  if (strlen($_REQUEST['city']) < 2 || $_REQUEST['city'] == 'Your city') {
-
-  $notice .= "Please enter your <strong>City</strong>.\n<BR>";
-
   }
 
   if (strlen($_REQUEST['zipcode']) < 5 || $_REQUEST['zipcode'] == 'Your Zip Code') {
@@ -70,7 +56,7 @@ switch (@$_REQUEST['kw']) {
 
 }
 
-if(@strlen($_REQUEST['ht_token']) == "" || $ht_token == "") {
+if(@strlen($_REQUEST['ht_token']) == "" || (isset($ht_token) && $ht_token == "" ) || !isset($ht_token) ){
   $ht_token = generateToken();
 }
 
@@ -312,19 +298,19 @@ style="display:none;width:0px;height:0px"></iframe>
                     </div>
 
                     <div>
-                      <input type="text" id="name" name="name" value="" placeholder="*Your Name"/>
+                      <input type="text" id="name" name="name" value="<?=(isset($_REQUEST['name'])?$_REQUEST['name']:'');?>" placeholder="*Your Name"/>
                     </div>
 
                     <div>
-                      <input type="text" id="zipcode" name="zipcode" value="" placeholder="*Your Zip Code"/>
+                      <input type="text" id="zipcode" name="zipcode" value="<?=(isset($_REQUEST['zipcode'])?$_REQUEST['zipcode']:'');?>" placeholder="*Your Zip Code"/>
                     </div>
 
                     <div>
-                      <input type="text" id="phone" name="phone" value="" placeholder="*Phone" />
+                      <input type="text" id="phone" name="phone" value="<?=(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');?>" placeholder="*Phone" />
                     </div>
 
                     <div>
-                      <input type="text" id="email" name="email" value="" placeholder="*Email (Required)"/>
+                      <input type="text" id="email" name="email" value="<?=(isset($_REQUEST['email'])?$_REQUEST['email']:'');?>" placeholder="*Email (Required)"/>
                     </div>
 
                     <?php $ht_date = date('Y-m-d ', strtotime('now')); ?>
@@ -335,11 +321,7 @@ style="display:none;width:0px;height:0px"></iframe>
                     <input name="url_ref" type="hidden" value="<?=@$url_ref_db?>">
                     <input name="iref" type="hidden" value="<?=$iref?>">
 
-                    <a href="#" class="next" >
-                      <button type="submit" name="submit_second" id="submit_second" >Get Your Quote</button>
-                    </a>
-
-                    <?php // <a href="#" class="next" ><button type="submit" name="submit_first" id="submit_first" >Next Step</button></a> ?>
+                    <button type="submit" name="submit_one_page" id="submit_one_page" >Get Your Quote</button>
 
                   </div><!-- #subscribe_pricing -->
 
@@ -347,179 +329,6 @@ style="display:none;width:0px;height:0px"></iframe>
                   <div class="caption" style="bottom:0">
 
                   </div>
-
-                </div>
-
-                <div class="slide">
-
-                  <div id="slide_content">
-                    <img src="/email-brochure/images/hot-tub.jpg" alt="ThermoSpas Hot Tub" width="570" height="538"/>
-                  </div>
-                  <div id="subscribe_pricing" >
-
-                    <p>Let us know a little about where you would like to put your hot tub.  This will allow us to come up with accurate pricing information.</p>
-
-                    <div>
-                      <select name="ht_location" class="customDropDown" id="ht_location">
-                        <option value="">Do you have a location?</option>
-                        <option value="outside">Yes: Outside</option>
-                        <option value="inside">Yes: Inside</option>
-                        <option value="no">Unsure</option>
-                      </select>
-                      <span id="ht_locationInfo" class="ht_locationInfo"></span>
-                    </div>
-
-                    <div>
-                      <select name="ht_owner" id="ht_owner" class="customDropDown" >
-                        <option value="">Have you owned a hot tub before?</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select>
-                      <span id="ht_ownerInfo" class="ht_ownerInfo"></span>
-                    </div>
-
-                    <input type="hidden" name="ht_jets" value="0" />
-
-                    <div>
-                      <select name="ht_siteinspection" id="ht_siteinspection" class="customDropDown" />
-                        <option value="">Have you had a site inspection?</option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                      </select> <span id="ht_siteinspectionInfo" class="ht_siteinspectionInfo"></span>
-                    </div>
-
-                    <div>
-                      <input type="text" id="email" name="email" value="" placeholder="*Email (Required)"/>
-                    </div>
-
-                    <!-- <div>
-                      <input type="checkbox" name="email-optin" id="email-optin" style="width:25px; float: left;"><label for="email-optin" style="width: 200px; display: block; padding: 5px 15px; font-size: .95em; line-height: 1.25em;">Yes, I would like to receive emailed ThermoSpas news and discounts</label>
-                    </div> -->
-
-                    <p><strong>Good News!</strong> Your FREE information is instantly available to download or view online! If you would prefer to receive it by mail as well, please fill in your address below. Packets may take up to 10 business days for delivery.</p>
-
-                    <div>
-                      <input type="text" id="address" name="address" value=""  placeholder="Address (Optional)" />
-                    </div>
-
-                    <div>
-                      <input type="text" id="city" name="city" value=""  placeholder="City (Optional)" />
-                    </div>
-
-                    <div>
-                      <select name="state1" id="state1" class="customDropDown" >
-
-                                              <option value="">State (Optional)</option>
-
-                                              <option value="AL">Alabama</option>
-
-                                              <option value="AK">Alaska</option>
-
-                                              <option value="AZ">Arizona</option>
-
-                                              <option value="AR">Arkansas</option>
-
-                                              <option value="CA">California</option>
-
-                                              <option value="CO">Colorado</option>
-
-                                              <option value="CT">Connecticut</option>
-
-                                              <option value="DE">Delaware</option>
-
-                                              <option value="FL">Florida</option>
-
-                                              <option value="GA">Georgia</option>
-
-                                              <option value="HI">Hawaii</option>
-
-                                              <option value="ID">Idaho</option>
-
-                                              <option value="IL">Illinois</option>
-
-                                              <option value="IN">Indiana</option>
-
-                                              <option value="IA">Iowa</option>
-
-                                              <option value="KS">Kansas</option>
-
-                                              <option value="KY">Kentucky</option>
-
-                                              <option value="LA">Louisiana</option>
-
-                                              <option value="ME">Maine</option>
-
-                                              <option value="MD">Maryland</option>
-
-                                              <option value="MA">Massachusetts</option>
-
-                                              <option value="MI">Michigan</option>
-
-                                              <option value="MN">Minnesota</option>
-
-                                              <option value="MS">Mississippi</option>
-
-                                              <option value="MO">Missouri</option>
-
-                                              <option value="MT">Montana</option>
-
-                                              <option value="NE">Nebraska</option>
-
-                                              <option value="NV">Nevada</option>
-
-                                              <option value="NH">New Hampshire</option>
-
-                                              <option value="NJ">New Jersey</option>
-
-                                              <option value="NM">New Mexico</option>
-
-                                              <option value="NY">New York</option>
-
-                                              <option value="NC">North Carolina</option>
-
-                                              <option value="ND">North Dakota</option>
-
-                                              <option value="OH">Ohio</option>
-
-                                              <option value="OK">Oklahoma</option>
-
-                                              <option value="OR">Oregon</option>
-
-                                              <option value="PA">Pennsylvania</option>
-
-                                              <option value="RI">Rhode Island</option>
-
-                                              <option value="SC">South Carolina</option>
-
-                                              <option value="SD">South Dakota</option>
-
-                                              <option value="TN">Tennessee</option>
-
-                                              <option value="TX">Texas</option>
-
-                                              <option value="UT">Utah</option>
-
-                                              <option value="VT">Vermont</option>
-
-                                              <option value="VA">Virginia</option>
-
-                                              <option value="WA">Washington</option>
-
-                                              <option value="WV">West Virginia</option>
-
-                                              <option value="WI">Wisconsin</option>
-
-                                              <option value="WY">Wyoming</option>
-                      </select> <span id="state1Info" class="state1Info"></span>
-                    </div>
-
-                    <a href="#" class="next" >
-                      <button type="submit" name="submit_second" id="submit_second" >Get Your Quote</button>
-                    </a>
-
-                  </div><!--subscribe_pricing ends-->
-
-                  <div class="caption" style="bottom:0"></div>
 
                 </div>
 
