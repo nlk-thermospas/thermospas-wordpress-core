@@ -359,7 +359,7 @@
 .promo .awards ul li {
     display: block;
     float: left;
-    height: 100px;
+    height: 50px;
     text-indent: -10000px;
 }
 .promo .awards ul li.apsp {
