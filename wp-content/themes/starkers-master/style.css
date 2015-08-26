@@ -1,0 +1,144 @@
+.graybackgroundbox {
+background-color: #F1F1F2;
+padding-top: 10px;
+padding-right: 0px;
+padding-bottom: 2px;
+padding-left: 0px;
+width: 100%;
+overflow: hidden;
+margin-top: 30px;
+margin-bottom: 40px;
+}
+
+.graybackgroundboxsmall {
+background-color: #F1F1F2;
+padding-top: 10px;
+padding-right: 0px;
+padding-bottom: 2px;
+padding-left: 0px;
+width: 100%;
+overflow: hidden;
+margin-top: 30px;
+margin-bottom: 0px;
+}
+
+
+.bulletcol1 {
+width: 40%;
+float:left;
+display:table;
+white-space:nowrap; 
+}
+
+.bulletcol2 {
+width: 60%;
+float:left;
+display:table;
+white-space:nowrap; 
+} 
+
+
+.warrantycol2 {
+float: left;
+margin-left: 20px;
+}
+
+.warrantycol1 {
+width: 70%;
+float: left;
+margin-bottom: 20px;
+} 
+
+.ui-datepicker td.ui-state-disabled span
+{
+	color: #999;
+}
+
+.row
+{
+	width: 100%;
+}
+
+.row .one-half
+{
+	width: 47%;
+	float: left;
+}
+
+.row .one-half.last
+{
+	margin-left: 1%;
+}
+
+.row:before
+{
+	clear: both;
+}
+
+.alabama-landing ul
+{
+	margin-left: 0px !important;
+	padding-left: 0px !important;
+}
+
+article .dyo-promo.only-phone {
+	display: none;
+}
+	
+		 	
+@media only screen and (max-width : 1232px) {
+	.warrantycol2 {
+		float: left;
+		max-width: 35%;
+		
+	}
+	.warrantycol1 {
+		width: 60%;
+	} 
+}
+
+
+@media only screen and (max-width : 1036px) {
+	.warrantycol2 {
+		float: left;
+		max-width: 25%;
+	}
+	.warrantycol1 {
+		width: 70%;
+	} 
+}
+
+@media only screen and (max-width : 790px) {
+	.warrantycol2 {
+		float: left;
+		max-width: 40%;
+	}
+	.warrantycol1 {
+		width: 55%;
+	} 
+}
+
+
+@media only screen and (max-width : 767px) {
+	
+	.only-desktop
+	{
+		display: none !important;
+	}
+	
+	.only-phone
+	{
+		display: block !important;
+	}
+}
+@media only screen and (max-width : 480px) {
+	.warrantycol2 {
+		float: none;
+		max-width: 90%;
+		text-align: center;
+		margin: 20px 10px 10px 10px;
+	}
+	.warrantycol1 {
+		width: 100%;
+	} 
+}
