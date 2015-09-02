@@ -6,4 +6,4 @@
 	url = https://github.com/nlk-thermospas/gravity-forms-lead-perfection-feed.git
 [submodule "wp-content/themes/starkers-master"]
 	path = wp-content/themes/starkers-master
-	url = git@github.com:nlk-thermospas/starkers-master.git
+	url = https://github.com/nlk-thermospas/starkers-master.git
