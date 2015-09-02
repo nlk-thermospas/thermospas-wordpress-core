@@ -85,15 +85,15 @@ if(@strlen($_REQUEST['ht_token']) == "" || (isset($ht_token) && $ht_token == "" 
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <?php // <script>window.jQuery || document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script> ?>
+    <script>window.jQuery || document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script>
     <script type='text/javascript' src='/jwplayer/jwplayer.js'></script>
 
     <!-- modernizr -->
-    <?php // <script type="text/javascript" src="/email-brochure/modernizr.full.min.js"></script> ?>
+    <script type="text/javascript" src="/email-brochure/modernizr.full.min.js"></script>
     <script type="text/javascript" src="/email-brochure/email-brochure.js"></script>
 
     <!-- SLIDERSHOW JQUERY FUNCTION -->
-    <?php // <script type="text/javascript" src="/email-brochure/slides.jquery.js"></script> ?>
+    <script type="text/javascript" src="/email-brochure/slides.jquery.js"></script>
 
     <!-- GALLERY POPUP JQUERY FUNCTION -->
     <script type="text/javascript" src="/email-brochure/jquery.lightbox-0.5.js"></script>
