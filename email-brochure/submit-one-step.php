@@ -29,35 +29,23 @@ json_encode( $_POST );
 
 
 $phone = $_POST['phone'];
-
 $search1  = array('(', ')');
-
 $search2  = array('+', ' ');
-
 $phone = str_replace($search1, "", $phone);
-
 $phone = str_replace($search2, "-", $phone);
 
 
 
 $sql_ht_form = "INSERT INTO ht_form
-
 		(`ht_date`, `ht_use`,`ht_seating`,`zipcode`,`iref`,`name`,`phone`,`email`,`ht_token`)
-
 		VALUES ('".$_POST['ht_date']."','".$_POST['ht_use']."','".$_POST['ht_seating']."','".$_POST['zipcode']."','".$_POST['iref']."','".$_POST['name']."','".$phone."','".$_POST['email']."','".$_POST['ht_token']."')";
 
-
-
 $lead_date = date('m-d-y', strtotime($_POST['ht_date']));
-
 $lead_time = date('H:i:s');
 
 $sql_leads = "INSERT INTO leads
-
 		(`create_date`,`create_time`, `DYO_use`,`DYO_tub`,`zip`,`referrer`,`name`,`phone`,`email`,`leads_token`)
-
 		VALUES ('".$lead_date."','".$lead_time."','".$_POST['ht_use']."','".$_POST['ht_seating']."','".$_POST['zipcode']."','".$_POST['iref']."','".$_POST['name']."','".$phone."','".$_POST['email']."','".$_POST['ht_token']."')";
-
 
 mysql_query($sql_ht_form);
 $ht_id = mysql_insert_id();
@@ -76,12 +64,3 @@ $submission = $db->get('ht_form', array('ht_id', $ht_id));
 $lead = $db->get('leads', $lead_id);
 $email->sendSubmission($submission, 'hot-tub-pricing-1.php - step 1', $lead);
 // End Send Email Notification
-
-
-
-		echo "Google Covnersion Fired";
-
-		?>
-
-<?php /* Google Conversion code moved to GTM */ ?>
-<?php /* Bing Conversion code moved to GTM */ ?>
