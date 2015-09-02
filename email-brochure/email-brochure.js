@@ -90,12 +90,12 @@ $(document).ready(function(){
 		}
 	});
 
-	$('#submit_one_page').click(function(){
-		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
+
+	$('#submit_one_page').submit(function(e){
+		e.preventDefault();
 		if( validateName() & validateZipcode() & validatePhone() & validateEmail() ){
-			var ht_token = $("#ht_token").val();
-			submit_data_one_step(ht_token);
 			console.log('submit_data_one_step = true');
+			$(this).submit();
 			return true;
 		}else{
 			return false;
@@ -393,6 +393,7 @@ $(document).ready(function(){
 			}
 		});
 	}
+	/*
 	function submit_data_one_step(ht_token){
 		__ss_noform.push(['submit', null]);
 		console.log( $('#ht_form').serialize() );
@@ -406,6 +407,7 @@ $(document).ready(function(){
 			}
 		});
 	}
+	*/
 	function ppcconversion() {
 		var iframe = document.createElement('iframe');
 		iframe.style.width = '0px';
