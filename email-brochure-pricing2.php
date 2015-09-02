@@ -95,6 +95,22 @@ if(@strlen($_REQUEST['ht_token']) == "" || (isset($ht_token) && $ht_token == "" 
     <!-- SLIDERSHOW JQUERY FUNCTION -->
     <script type="text/javascript" src="/email-brochure/slides.jquery.js"></script>
 
+    <script type="text/javascript">
+      var j = jQuery;
+      $(function(){
+        $('#slides').slides({
+          preload: true,
+          preloadImage: '/email-brochure/images/loading.gif',
+          effect: 'fade',
+          next: 'next',
+          pagination: false,
+          generatePagination: false,
+          autoHeight: true,
+          autoHeightSpeed: 350
+        });
+      });
+    </script>
+
     <!-- GALLERY POPUP JQUERY FUNCTION -->
     <script type="text/javascript" src="/email-brochure/jquery.lightbox-0.5.js"></script>
     <link rel="stylesheet" type="text/css" href="/email-brochure/jquery.lightbox-0.5.css" media="screen" />
@@ -231,7 +247,7 @@ style="display:none;width:0px;height:0px"></iframe>
 
 
 
-        <form id="ht_form" action="" method="post">
+        <form id="ht_form" class="one-page" action="" method="post">
 
           <div id="slides">
 
