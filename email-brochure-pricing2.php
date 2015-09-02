@@ -231,7 +231,7 @@ style="display:none;width:0px;height:0px"></iframe>
 
 
 
-        <form id="ht_form" action="" method="post">
+        <form id="ht_form" class="one-page" action="" method="post">
 
           <div id="slides">
 

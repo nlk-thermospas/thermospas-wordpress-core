@@ -106,6 +106,9 @@ HOT TUB SLIDER STYLES
 	position:relative; 
 	display:none; 
 	}
+form.one-page .slides_container {
+	display: block;
+	}
 .slides_container div.slide { 
 	width:925px; 
 	display:block; 
