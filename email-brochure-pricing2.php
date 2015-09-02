@@ -260,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       <input type="text" id="phone" name="phone" value="<?=(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');?>" placeholder="*Phone" />
                     </div>
                     <div>
-                      <input type="text" id="email" name="email" value="<?=(isset($_REQUEST['email'])?$_REQUEST['email']:'');?>" placeholder="*Email (Required)"/>
+                      <input type="text" id="email" name="email" value="<?=(isset($_REQUEST['email'])?$_REQUEST['email']:'');?>" placeholder="*Email"/>
                     </div>
                     <?php $ht_date = date('Y-m-d ', strtotime('now')); ?>
                     <input name="ht_date" type="hidden" value="<?=$ht_date?>">
