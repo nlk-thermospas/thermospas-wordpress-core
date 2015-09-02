@@ -85,15 +85,15 @@ if(@strlen($_REQUEST['ht_token']) == "" || (isset($ht_token) && $ht_token == "" 
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script>
+    <?php // <script>window.jQuery || document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script> ?>
     <script type='text/javascript' src='/jwplayer/jwplayer.js'></script>
 
     <!-- modernizr -->
-    <script type="text/javascript" src="/email-brochure/modernizr.full.min.js"></script>
+    <?php // <script type="text/javascript" src="/email-brochure/modernizr.full.min.js"></script> ?>
     <script type="text/javascript" src="/email-brochure/email-brochure.js"></script>
 
     <!-- SLIDERSHOW JQUERY FUNCTION -->
-    <script type="text/javascript" src="/email-brochure/slides.jquery.js"></script>
+    <?php // <script type="text/javascript" src="/email-brochure/slides.jquery.js"></script> ?>
 
     <!-- GALLERY POPUP JQUERY FUNCTION -->
     <script type="text/javascript" src="/email-brochure/jquery.lightbox-0.5.js"></script>
@@ -104,9 +104,6 @@ if(@strlen($_REQUEST['ht_token']) == "" || (isset($ht_token) && $ht_token == "" 
         g('.gallery a').lightBox();
       });
     </script>
-
-
-<?php /* Google Analytics UA moved to GTM */ ?>
 
     <!--[if IE 7 ]>    <link rel="stylesheet" type="text/css" href="../sk/css/ie7style.css" media="screen" /> <![endif]-->
     <!--[if IE 8 ]>    <link rel="stylesheet" type="text/css" href="../sk/css/ie8style.css" media="screen" /> <![endif]-->
@@ -124,24 +121,6 @@ if(@strlen($_REQUEST['ht_token']) == "" || (isset($ht_token) && $ht_token == "" 
       })();
     </script>
 
-<?php /* Google Remarketing all visitors moved to GTM */ ?>
-
-<?php /* Removed [https://ninthlink.atlassian.net/browse/THERMO-42]
-    <script type="text/javascript">
-    var _ss = _ss || [];
-    _ss.push(['_setDomain', 'https://koi-PLBR48.sharpspring.com/net']);
-    _ss.push(['_setAccount', 'KOI-RUPIJ2']);
-    _ss.push(['_trackPageView']);
-    (function() {
-    var ss = document.createElement('script');
-    ss.type = 'text/javascript'; ss.async = true;
-    ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-PLBR48.sharpspring.com/client/ss.js?ver=1.1.1';
-    var scr = document.getElementsByTagName('script')[0];
-    scr.parentNode.insertBefore(ss, scr);
-    })();
-    </script>
-*/ ?>
-
   </head>
 
   <body>
@@ -157,40 +136,38 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <script>
-
-var versaTag = {};
-versaTag.id = "762"
-versaTag.sync = 0
-versaTag.dispType = "js"
-versaTag.ptcl = "HTTP"
-versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe"
-//versaTag.mobile = 1
-//VersaTag activity parameters include all conversion parameters including custom parameters. Syntax: "ParamName1":"ParamValue1", "ParamName2":"ParamValue2". ParamValue can be empty.
-versaTag.activityParams = {};
-//Static retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
-versaTag.retargetParams = {};
-//Dynamic retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
-versaTag.dynamicRetargetParams = {};
-//Third party tags conditional parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
-versaTag.conditionalParams = {};
+  var versaTag = {};
+  versaTag.id = "762"
+  versaTag.sync = 0
+  versaTag.dispType = "js"
+  versaTag.ptcl = "HTTP"
+  versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe"
+  //versaTag.mobile = 1
+  //VersaTag activity parameters include all conversion parameters including custom parameters. Syntax: "ParamName1":"ParamValue1", "ParamName2":"ParamValue2". ParamValue can be empty.
+  versaTag.activityParams = {};
+  //Static retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
+  versaTag.retargetParams = {};
+  //Dynamic retargeting tags parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
+  versaTag.dynamicRetargetParams = {};
+  //Third party tags conditional parameters. Syntax: "TagID1":"ParamValue1", "TagID2":"ParamValue2". ParamValue can be empty.
+  versaTag.conditionalParams = {};
 </script>
-
 <script id="ebOneTagUrlId" src="http://ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
 <noscript>
-<iframe src="http://bs.serving-sys.com/BurstingPipe?
-cn=ot&amp;
-onetagid=762&amp;
-ns=1&amp;
-activityValues=$$
-Value=[Value]0&amp;
-OrderID=[OrderID]0&amp;
-ProductID=[ProductID]&amp;
-ProductInfo=[ProductInfo]&amp;
-Quantity=[Quantity]&amp;$$&amp;
-retargetingValues=$$&amp;
-dynamicRetargetingValues=$$&amp;
-acp=$$$$&amp;"
-style="display:none;width:0px;height:0px"></iframe>
+  <iframe src="http://bs.serving-sys.com/BurstingPipe?
+  cn=ot&amp;
+  onetagid=762&amp;
+  ns=1&amp;
+  activityValues=$$
+  Value=[Value]0&amp;
+  OrderID=[OrderID]0&amp;
+  ProductID=[ProductID]&amp;
+  ProductInfo=[ProductInfo]&amp;
+  Quantity=[Quantity]&amp;$$&amp;
+  retargetingValues=$$&amp;
+  dynamicRetargetingValues=$$&amp;
+  acp=$$$$&amp;"
+  style="display:none;width:0px;height:0px"></iframe>
 </noscript>
 
 
@@ -210,118 +187,79 @@ style="display:none;width:0px;height:0px"></iframe>
 <!-- end header -->
 
 <section role="main">
-
     <div id="container">
+      <div id="content" class="clearfix">
+        <div id="main" class="col940 left first clearfix" role="main">
+          <article>
+          <!--Main center aligned heading-->
+            <h1><span class="heading">Find the best hot tub that fits your needs, then get pricing!</span></h1>
 
-
-
-          <div id="content" class="clearfix">
-
-              <div id="main" class="col940 left first clearfix" role="main">
-
-
-
-      <article>
-
-      <!--Main center aligned heading-->
-
-      <h1>
-        <span class="heading">Find the best hot tub that fits your needs, then get pricing!</span>
-      </h1>
-
-
-
-        <form id="ht_form" class="one-page" action="" method="post">
-
-          <div id="slides">
-
-              <div class="slides_container">
-
-                <div class="slide">
-
-                  <!--slide Content starts-->
-                  <div id="slide_content">
-                    <div id='mediaplayer'></div>
-                  </div><!--#slide_content end-->
-
-                  <!--subscribe_bg starts-->
-                  <div id="subscribe_pricing">
-
-                    <h2>Let us know what you're looking for...</h2>
-
-                    <p>...and we'll provide you pricing on the hot tub of your dreams.</p>
-
-                    <div>
-                      <select name="ht_use" class="customDropDown" id="ht_use">
-                      <?php if (strlen($_REQUEST['ht_use']) > 2) { ?>
-                        <option value="<?=$_REQUEST['ht_use']?>" disabled="disabled">Already Selected</option>
-                      <?php } else { ?>
-                        <option value="">Primary Hot Tub Use?</option>
-                        <option value="relaxation">Relaxation</option>
-                        <option value="hydrotherapy">Hydrotherapy/Pain Relief</option>
-                        <option value="exercise">Exercise</option>
-                        <option value="other">Other </option>
-                      <?php } ?>
-                      </select><div id="ht_useInfo" class="ht_useInfo"></div>
-                    </div>
-
-                    <div>
-                      <select name="ht_seating" class="customDropDown" id="ht_seating">
-                      <?php if (strlen($_REQUEST['ht_seating']) > 2) { ?>
-                        <option value="<?=$_REQUEST['ht_seating']?>" disabled="disabled">Already Selected</option>
-                      <?php } else { ?>
-                        <option value="">How many people?</option>
-                        <option value="2to3">2-3 person</option>
-                        <option value="3to4">3-4 person</option>
-                        <option value="4to5">4-5 person</option>
-                        <option value="5to6">5-6 person</option>
-                        <option value="6to+">6+ person</option>
-                      <?php } ?>
-                      </select>
-                      <div id="ht_seatingInfo" class="ht_seatingInfo"></div>
-                    </div>
-
-                    <div>
-                      <input type="text" id="name" name="name" value="<?=(isset($_REQUEST['name'])?$_REQUEST['name']:'');?>" placeholder="*Your Name"/>
-                    </div>
-
-                    <div>
-                      <input type="text" id="zipcode" name="zipcode" value="<?=(isset($_REQUEST['zipcode'])?$_REQUEST['zipcode']:'');?>" placeholder="*Your Zip Code"/>
-                    </div>
-
+            <form id="ht_form" class="one-page" action="/email-brochure/submit-one-step.php" method="post">
+              <div id="slides">
+                <div class="slides_container">
+                  <div class="slide">
+                    <!--slide Content starts-->
+                    <div id="slide_content">
+                      <div id='mediaplayer'></div>
+                    </div><!--#slide_content end-->
+                    <!--subscribe_bg starts-->
+                    <div id="subscribe_pricing">
+                      <h2>Let us know what you're looking for...</h2>
+                      <p>...and we'll provide you pricing on the hot tub of your dreams.</p>
+                      <div>
+                        <select name="ht_use" class="customDropDown" id="ht_use">
+                        <?php if (strlen($_REQUEST['ht_use']) > 2) { ?>
+                          <option value="<?=$_REQUEST['ht_use']?>" disabled="disabled">Already Selected</option>
+                        <?php } else { ?>
+                          <option value="">Primary Hot Tub Use?</option>
+                          <option value="relaxation">Relaxation</option>
+                          <option value="hydrotherapy">Hydrotherapy/Pain Relief</option>
+                          <option value="exercise">Exercise</option>
+                          <option value="other">Other </option>
+                        <?php } ?>
+                        </select><div id="ht_useInfo" class="ht_useInfo"></div>
+                      </div>
+                      <div>
+                        <select name="ht_seating" class="customDropDown" id="ht_seating">
+                        <?php if (strlen($_REQUEST['ht_seating']) > 2) { ?>
+                          <option value="<?=$_REQUEST['ht_seating']?>" disabled="disabled">Already Selected</option>
+                        <?php } else { ?>
+                          <option value="">How many people?</option>
+                          <option value="2to3">2-3 person</option>
+                          <option value="3to4">3-4 person</option>
+                          <option value="4to5">4-5 person</option>
+                          <option value="5to6">5-6 person</option>
+                          <option value="6to+">6+ person</option>
+                        <?php } ?>
+                        </select>
+                        <div id="ht_seatingInfo" class="ht_seatingInfo"></div>
+                      </div>
+                      <div>
+                        <input type="text" id="name" name="name" value="<?=(isset($_REQUEST['name'])?$_REQUEST['name']:'');?>" placeholder="*Your Name"/>
+                      </div>
+                      <div>
+                        <input type="text" id="zipcode" name="zipcode" value="<?=(isset($_REQUEST['zipcode'])?$_REQUEST['zipcode']:'');?>" placeholder="*Your Zip Code"/>
+                      </div>
                     <div>
                       <input type="text" id="phone" name="phone" value="<?=(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');?>" placeholder="*Phone" />
                     </div>
-
                     <div>
                       <input type="text" id="email" name="email" value="<?=(isset($_REQUEST['email'])?$_REQUEST['email']:'');?>" placeholder="*Email (Required)"/>
                     </div>
-
                     <?php $ht_date = date('Y-m-d ', strtotime('now')); ?>
-
                     <input name="ht_date" type="hidden" value="<?=$ht_date?>">
                     <input name="ht_token" type="hidden" value="<?=$ht_token?>" id="ht_token">
                     <input name="lf" type="hidden" value="c1">
                     <input name="url_ref" type="hidden" value="<?=@$url_ref_db?>">
                     <input name="iref" type="hidden" value="<?=$iref?>">
-
                     <button type="submit" name="submit_one_page" id="submit_one_page" >Get Your Quote</button>
-
                   </div><!-- #subscribe_pricing -->
-
-
                   <div class="caption" style="bottom:0">
-
                   </div>
-
                 </div>
-
               </div>
-
             </div>
-
         </form>
-
         <script type="text/javascript">
         var __ss_noform = __ss_noform || [];
         __ss_noform.push(['baseURI', 'https://app-PLBR48.sharpspring.com/webforms/receivePostback/MzQyNQAA/']);

@@ -64,3 +64,7 @@ $submission = $db->get('ht_form', array('ht_id', $ht_id));
 $lead = $db->get('leads', $lead_id);
 $email->sendSubmission($submission, 'hot-tub-pricing-1.php - step 1', $lead);
 // End Send Email Notification
+
+
+
+header('Location: /hot-tub-pricing-results/');
