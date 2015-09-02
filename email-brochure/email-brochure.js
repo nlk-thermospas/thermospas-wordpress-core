@@ -402,8 +402,6 @@ $(document).ready(function(){
 			dataType: 'json',
 			data: $('#ht_form').serialize(),
 			complete: function(html){
-				console.log(html);
-				console.log('somethin!');
 				window.location = "/hot-tub-pricing-results";
 			}
 		});
