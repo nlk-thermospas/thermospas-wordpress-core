@@ -82,7 +82,7 @@ article {
 }
 .secondary .gform_wrapper .gform_body ul ul {
 	list-style-type: disc;
-	margin-left: 50px;
+	/*margin-left: 50px;*/
 	margin-bottom: 10px;
 }
 .secondary .gform_wrapper .gform_body ul ul li {
@@ -108,7 +108,7 @@ article {
 .gform_wrapper form input[type=button].gform_previous_button {
 	display: none;
 }
-#field_5_13 {margin-top: 20px;}
+#field_5_13 {padding-top: 20px;}
 #field_5_2, #field_5_5, #field_5_11 {
 	width: 57%;
 	margin: 0px 2% 0px 0px;
@@ -121,7 +121,7 @@ article {
 #field_5_2, #field_5_11 {width: 39%; }
 #input_5_12 {
 	width: 300px;
-	margin-top: 10px;
+	padding-top: 10px;
 }
 .secondary .gform_wrapper .gform_body ul ul li  { list-style: none; vertical-align:top;}
 .secondary .gform_wrapper .gform_body ul ul li  label { display: block; }
