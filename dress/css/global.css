@@ -346,7 +346,7 @@ footer ul.social li a:hover {}
 .gform_wrapper form .gform_body {}
 .gform_wrapper form .gform_body ul {
 	display: block;
-	float: left;
+	/*float: left;*/ /* https://ninthlink.atlassian.net/browse/THERMO-87 */
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
