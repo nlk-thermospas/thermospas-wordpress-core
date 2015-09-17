@@ -53,7 +53,7 @@ function navManager() {
 }
 
 function moveFooter() {
-	if(window.location.pathname != "/get-free-site-inspection/" && window.location.pathname != "/get-free-brochure-dvd-1000-coupon/" && window.location.pathname != "/get-pricing/") {
+	if(window.location.pathname != "/get-free-site-inspection/" && window.location.pathname != "/get-free-brochure-dvd-1000-coupon/" && window.location.pathname != "/get-pricing/" && window.location.pathname != "/thermospas-hot-tubs-online-store/") {
 		if(jQuery(window).width() > 1024) {
 			jQuery('footer').insertAfter('.primary');
 			jQuery('footer').insertAfter('.free-inspection');
