@@ -178,7 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div id="logo" class="h1"><a href="" rel="nofollow"><img src="/email-brochure/images/logo.png" alt="ThermoSpas" align="Thermospas"><span class="hidden">Thermospas</span></a></div>
 
-    <p>Phone Support? <span>Call 800-876-0158</span></p>
+    <p>Phone Support? <span>Call 800-807-6107</span></p>
 
   </div> <!-- end #inner-header -->
 
