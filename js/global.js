@@ -95,9 +95,11 @@ jQuery(function() {
 	navManager();
 	moveFooter();
 	privacyModal();
-	jQuery(window).resize(function(){
-		clearTimeout(doit);
-  		doit = setTimeout(navManager, 100);
-  		moveFooter();
-	});
+	if(jQuery(window).width() > 1024) {
+		jQuery(window).resize(function(){
+			clearTimeout(doit);
+	  		doit = setTimeout(navManager, 100);
+	  		moveFooter();
+		});
+	}
 });

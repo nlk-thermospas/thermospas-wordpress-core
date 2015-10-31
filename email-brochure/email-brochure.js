@@ -91,11 +91,10 @@ $(document).ready(function(){
 	});
 
 
-	$('#submit_one_page').submit(function(e){
+	$('#submit_one_page').bind('click', function(e){
 		e.preventDefault();
 		if( validateName() & validateZipcode() & validatePhone() & validateEmail() ){
-			console.log('submit_data_one_step = true');
-			$(this).submit();
+			$(this).parents('form').submit();
 			return true;
 		}else{
 			return false;

@@ -964,6 +964,7 @@ footer ul.social li a:hover {}
 		background: white;
 		height: 42px;
 		top: 93px;
+		z-index: 300000;
 	}
 	.stripe .search form {
 		margin-top: 5px;
