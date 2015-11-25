@@ -67,9 +67,9 @@ header{
 	background-image: -webkit-linear-gradient(bottom, #6DAFE2 0%, #3A83C7 100%);
 	background-image: -ms-linear-gradient(bottom, #6DAFE2 0%, #3A83C7 100%);
 	background-image: linear-gradient(to bottom, #6DAFE2 0%, #3A83C7 100%);
-	-webkit-box-shadow: 0px 2px 5px 0px rgba(153,9,NaN,1);
-	-moz-box-shadow: 0px 2px 5px 0px rgba(153,9,NaN,1);
-	box-shadow: 0px 2px 5px 0px rgba(153,9,NaN,1);
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(153,153,153,1);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(153,153,153,1);
+	box-shadow: 0px 2px 3px 0px rgba(153,153,153,1);
 }
 	
 
@@ -273,6 +273,7 @@ CUSTOM INPUT STYLES
     -webkit-box-shadow: #333 0px 2px 3px;
 		-moz-box-shadow: #333 0px 2px 3px;
 		box-shadow: #333 0px 2px 3px;
+		text-transform: uppercase;
 }
 #subscribe_pricing button:hover
 {
