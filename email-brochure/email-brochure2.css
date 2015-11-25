@@ -20,8 +20,8 @@ a:link {text-decoration:none; outline:none; /*  -webkit-tap-highlight-color : rg
 /******************************************************************
 COMMON ELEMENT STYLES
 ******************************************************************/
-h1 {clear:both; font-size:30px; text-align:center; margin:20px; font-weight:normal; color:#303030;}
-h2 {clear:both; font-size:20px; line-height:22px; text-align:baseline; font-weight:normal; color:#303030; margin:5px 0;}
+h1 {clear:both; font-size:30px; text-align:center; margin:40px 20px 20px; font-weight:normal; color:#303030;}
+h2 {clear:both; font-size:19px; line-height:22px; text-align:baseline; font-weight:normal; color:#303030; margin:5px 0;}
 h3 {font-size:18px; text-align:baseline; margin:5px; font-weight:normal; color:#303030;}
 h4 {font-size:16px; text-align:baseline; margin:5px; font-weight:normal; color:#303030;}
 
