@@ -247,6 +247,7 @@ CUSTOM INPUT STYLES
 	select {
 	width:202px;
 	height:40px !important;
+	-webkit-appearance: menulist-button;
 	}
 	
 #subscribe_pricing button {
