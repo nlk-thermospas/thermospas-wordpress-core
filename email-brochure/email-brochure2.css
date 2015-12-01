@@ -313,7 +313,7 @@ CUSTOM SELECT STYLES
 	color:#000;
 	}
 			
-	.customStyleSelectBoxInner {}
+	.customStyleSelectBoxInner {width: 100% !important;}
 
 /******************************************************************
 PLACEHOLDER STYLES
