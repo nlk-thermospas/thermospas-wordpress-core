@@ -245,9 +245,10 @@ CUSTOM INPUT STYLES
 	font-size: 13px;
 	}
 	select {
-	width:202px;
+	width:100%;
 	height:40px !important;
 	-webkit-appearance: menulist-button;
+	max-width: 316px;
 	}
 	
 #subscribe_pricing button {
