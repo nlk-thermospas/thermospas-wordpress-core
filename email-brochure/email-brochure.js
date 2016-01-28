@@ -71,7 +71,10 @@ $(document).ready(function(){
 
 	$('#submit_first').click(function(){
 		var honey = $('input#emailAddressX').val();
-		if ( honey ) return false;
+		if ( honey ) {
+			console.log('hp1st');
+			return false;
+		}
 		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
 		if( validateName() & validateZipcode() & validatePhone()){
 			submit_data_step1();
@@ -83,7 +86,10 @@ $(document).ready(function(){
 
 	$('#submit_second').click(function(){
 		var honey = $('input#emailAddressX').val();
-		if ( honey ) return false;
+		if ( honey ) {
+			console.log('hp2nd');
+			return false;
+		}
 		//if( validate_ht_location() & validate_ht_jets() & validate_ht_owner() & validate_ht_siteinspection() & validateAddress() & validateCity() & validateState() ){
 		if( validateEmail() ){
 			var ht_token = $("#ht_token").val();
