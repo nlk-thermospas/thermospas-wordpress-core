@@ -72,8 +72,10 @@ $(document).ready(function(){
 	$('#submit_first').click(function(){
 		var honey = $('input#emailAddressX').val();
 		if ( honey ) {
-			console.log('hp1st');
+			console.log('hp-triggered: "'+honey+'"');
 			return false;
+		} else {
+			console.log('hp-passed');
 		}
 		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
 		if( validateName() & validateZipcode() & validatePhone()){
@@ -87,8 +89,10 @@ $(document).ready(function(){
 	$('#submit_second').click(function(){
 		var honey = $('input#emailAddressX').val();
 		if ( honey ) {
-			console.log('hp2nd');
+			console.log('hp-triggered: "'+honey+'"');
 			return false;
+		} else {
+			console.log('hp-passed');
 		}
 		//if( validate_ht_location() & validate_ht_jets() & validate_ht_owner() & validate_ht_siteinspection() & validateAddress() & validateCity() & validateState() ){
 		if( validateEmail() ){
@@ -103,6 +107,13 @@ $(document).ready(function(){
 
 	$('#submit_one_page').bind('click', function(e){
 		e.preventDefault();
+		var honey = $('input#emailAddressX').val();
+		if ( honey ) {
+			console.log('hp-triggered: "'+honey+'"');
+			return false;
+		} else {
+			console.log('hp-passed');
+		}
 		if( validateName() & validateZipcode() & validatePhone() & validateEmail() ){
 			$(this).parents('form').submit();
 			return true;
