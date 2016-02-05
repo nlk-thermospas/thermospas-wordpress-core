@@ -76,13 +76,13 @@ $(document).ready(function(){
 			return false;
 		} else {
 			console.log('hp-passed');
-		}
-		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
-		if( validateName() & validateZipcode() & validatePhone()){
-			submit_data_step1();
-			return true;
-		}else{
-			return false;
+			//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
+			if( validateName() & validateZipcode() & validatePhone()){
+				submit_data_step1();
+				return true;
+			}else{
+				return false;
+			}
 		}
 	});
 
@@ -93,14 +93,14 @@ $(document).ready(function(){
 			return false;
 		} else {
 			console.log('hp-passed');
-		}
-		//if( validate_ht_location() & validate_ht_jets() & validate_ht_owner() & validate_ht_siteinspection() & validateAddress() & validateCity() & validateState() ){
-		if( validateEmail() ){
-			var ht_token = $("#ht_token").val();
-			submit_data_step2(ht_token);
-			return false;
-		}else{
-			return false;
+			//if( validate_ht_location() & validate_ht_jets() & validate_ht_owner() & validate_ht_siteinspection() & validateAddress() & validateCity() & validateState() ){
+			if( validateEmail() ){
+				var ht_token = $("#ht_token").val();
+				submit_data_step2(ht_token);
+				return false;
+			}else{
+				return false;
+			}
 		}
 	});
 
