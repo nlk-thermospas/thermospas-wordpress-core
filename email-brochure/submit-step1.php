@@ -16,6 +16,7 @@ json_encode( $_POST );
     'Phone'      => $_POST['phone'],
     'Comments'   => $comments,
     'Iref'       => $_POST['iref'],
+    'honeypot'   => $_POST['email-address'] // honey pot field is named "email-address"
   );
   $url = 'http://dd33.leadperfection.com/batch/addleadsinternet.asp';
 
