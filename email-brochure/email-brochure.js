@@ -76,8 +76,9 @@ $(document).ready(function(){
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
 			//return false;
+		} else {
+			console.log('hp-passed');
 		}
-		console.log('hp-passed');
 		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
 		if( validateName() & validateZipcode() & validatePhone()){
 			submit_data_step1();
@@ -92,8 +93,9 @@ $(document).ready(function(){
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
 			//return false;
+		} else {
+			console.log('hp-passed');
 		}
-		console.log('hp-passed');
 		//if( validate_ht_location() & validate_ht_jets() & validate_ht_owner() & validate_ht_siteinspection() & validateAddress() & validateCity() & validateState() ){
 		if( validateEmail() ){
 			var ht_token = $("#ht_token").val();

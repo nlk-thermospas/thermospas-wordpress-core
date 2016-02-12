@@ -282,7 +282,7 @@ style="display:none;width:0px;height:0px"></iframe>
                     <p>...and we'll provide you pricing on the hot tub of your dreams.</p>
 
                     <div style="position: absolute; left: -100%; height: 1px; width: 1px; overflow: hidden;">
-                      <input type="text" id="email-address-hp" name="email-address" placeholder="Please leave this field blank" />
+                      <input type="text" id="email-address-hp" name="email-address" placeholder="Please leave this field blank" autocomplete="off"/>
                     </div>
                     <div>
                       <select name="ht_use" class="customDropDown" id="ht_use">

@@ -15,9 +15,11 @@ json_encode( $_POST );
     'Zipcode'    => $_POST['zipcode'],
     'Phone'      => $_POST['phone'],
     'Comments'   => $comments,
-    'Iref'       => $_POST['iref'],
-    'honeypot'   => $_POST['email-address'] // honey pot field is named "email-address"
+    'Iref'       => $_POST['iref']
   );
+  if ( isset($_POST['email-address']) && !empty($_POST['email-address']) ) {
+    $array['honeypot'] = $_POST['email-address']; // honey pot field is named "email-address"
+  }
   $url = 'http://dd33.leadperfection.com/batch/addleadsinternet.asp';
 
   $url .= '?' . http_build_query( $array );
