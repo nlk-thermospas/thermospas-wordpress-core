@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	// global vars
+	var honeyPot = $("#email-address-hp");
+
 	// first step
 	var form = $("#ht_form");
 	var ht_use = $("#ht_use");
@@ -70,13 +72,12 @@ $(document).ready(function(){
 	//state.change(validateState);
 
 	$('#submit_first').click(function(){
-		var honey = $('input#emailAddressX').val();
+		var honey = $('input#email-address-hp').val();
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
-			return false;
-		} else {
-			console.log('hp-passed');
+			//return false;
 		}
+		console.log('hp-passed');
 		//if( validate_ht_use() & validate_ht_seating() & validateName() & validateZipcode() & validatePhone()){
 		if( validateName() & validateZipcode() & validatePhone()){
 			submit_data_step1();
@@ -87,13 +88,12 @@ $(document).ready(function(){
 	});
 
 	$('#submit_second').click(function(){
-		var honey = $('input#emailAddressX').val();
+		var honey = $('input#email-address-hp').val();
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
-			return false;
-		} else {
-			console.log('hp-passed');
+			//return false;
 		}
+		console.log('hp-passed');
 		//if( validate_ht_location() & validate_ht_jets() & validate_ht_owner() & validate_ht_siteinspection() & validateAddress() & validateCity() & validateState() ){
 		if( validateEmail() ){
 			var ht_token = $("#ht_token").val();
@@ -107,7 +107,7 @@ $(document).ready(function(){
 
 	$('#submit_one_page').bind('click', function(e){
 		e.preventDefault();
-		var honey = $('input#emailAddressX').val();
+		var honey = $('input#email-address-hp').val();
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
 			return false;
