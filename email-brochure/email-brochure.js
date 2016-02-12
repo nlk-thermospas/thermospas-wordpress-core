@@ -389,12 +389,12 @@ $(document).ready(function(){
 	}
 	function submit_data_step1(){
 		__ss_noform.push(['submit', null]);
-		console.log( $('#ht_form').serialize() );
+		console.log( $("#ht_form  :input[value!='']").serialize() );
 		$.ajax({
 			url: '/email-brochure/submit-step1.php',
 			type: 'POST',
 			dataType: 'json',
-			data: $('#ht_form').serialize(),
+			data: $("#ht_form  :input[value!='']").serialize(),
 			complete: function(html){
 				ppcconversion();
 				console.log(html);
@@ -403,12 +403,12 @@ $(document).ready(function(){
 	}
 	function submit_data_step2(ht_token){
 		__ss_noform.push(['submit', null]);
-		console.log( $('#ht_form').serialize() );
+		console.log( $("#ht_form  :input[value!='']").serialize() );
 		$.ajax({
 			url: '/email-brochure/submit-step2.php',
 			type: 'POST',
 			dataType: 'json',
-			data: $('#ht_form').serialize(),
+			data: $("#ht_form :input[value!='']").serialize(),
 			complete: function(html){
 				console.log(html);
 				window.location = "/hot-tub-pricing-results";
