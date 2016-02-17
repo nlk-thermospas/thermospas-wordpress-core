@@ -2,6 +2,7 @@
 .vagrant/
 dbconn.php
 db_connect.php
+/thermospas-dyo/
 
 
 # Compiled source #
