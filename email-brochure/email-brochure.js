@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	// global vars
-	var honeyPot = $("#email-address-hp");
+	var honeyPot = $("#comments-hp");
 
 	// first step
 	var form = $("#ht_form");
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	//state.change(validateState);
 
 	$('#submit_first').click(function(){
-		var honey = $('input#email-address-hp').val();
+		var honey = $('input#comments-hp').val();
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
 			//return false;
@@ -89,7 +89,7 @@ $(document).ready(function(){
 	});
 
 	$('#submit_second').click(function(){
-		var honey = $('input#email-address-hp').val();
+		var honey = $('input#comments-hp').val();
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
 			//return false;
@@ -109,7 +109,7 @@ $(document).ready(function(){
 
 	$('#submit_one_page').bind('click', function(e){
 		e.preventDefault();
-		var honey = $('input#email-address-hp').val();
+		var honey = $('input#comments-hp').val();
 		if ( honey ) {
 			console.log('hp-triggered: "'+honey+'"');
 			return false;
