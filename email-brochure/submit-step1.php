@@ -17,8 +17,8 @@ json_encode( $_POST );
     'Comments'   => $comments,
     'Iref'       => $_POST['iref']
   );
-  if ( isset($_POST['email-address']) && !empty($_POST['email-address']) ) {
-    $array['honeypot'] = $_POST['email-address']; // honey pot field is named "email-address"
+  if ( isset($_POST['comments']) && !empty($_POST['comments']) ) {
+    $array['honeypot'] = $_POST['comments']; // honey pot field is named "comments"
   }
   $url = 'http://dd33.leadperfection.com/batch/addleadsinternet.asp';
 
