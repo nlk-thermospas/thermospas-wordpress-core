@@ -27,6 +27,10 @@ jQuery(function(){
 				setTimeout(function(){jQuery(window).scrollTop(jQuery('#a' + hashArr[1]).offset().top-40);	}, 100);
 			}
 		}
+		else
+		{
+			jQuery('.series, .seats').show();
+		}
 	}
 
 	hashTracker();

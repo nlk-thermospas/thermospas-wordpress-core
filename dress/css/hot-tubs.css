@@ -422,6 +422,7 @@ article.hot-tubs-lists .jump {
 	width: 65%;
 	background: #f2f2f2;
 	padding: 6px 0px;
+	clear: both;
 }
 article.hot-tubs-lists .jump p {
 	text-align: center;
