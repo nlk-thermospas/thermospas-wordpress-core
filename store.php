@@ -17,6 +17,7 @@ $full_name = rtrim($_POST['Name']);
 $name_arr = explode(' ', $full_name);
 $last_name = array_pop($name_arr);
 $first_name = implode(' ', $name_arr);
+$iref = isset($_POST['iref']) && $_POST['iref'] != '' ? trim($_POST['iref']) : 'iDYO';
 
 $comments = '{"model" : "' . $_POST['Model'] . '", "jets" : "' . $_POST['Jets'] . '", "shell" : "' . $_POST['Shell'] . '", "cabinet" : "' . $_POST['Cabinet'] . '", "options" : "' . $_POST['Options'] . '"}';
 
@@ -24,7 +25,7 @@ $sql = "";
 $sql .= "INSERT INTO ht_form";
 $sql .= "(name, fname, lname, address1, city, state, zipcode, phone, email, comments, iref, ht_date)";
 $sql .= "VALUES";
-$sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', 'iDYO', '" . date("Y-m-d") . "')";
+$sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', $iref , '" . date("Y-m-d") . "')";
 
 if($conn->query($sql) === false) {
   trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
