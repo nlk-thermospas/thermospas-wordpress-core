@@ -58,7 +58,7 @@ if($conn->query($sql) === false) {
   $affected_rows = $conn->affected_rows;
 
   // Send an Email!
-  $to = "web@thermospas.com";
+  $to = "web@thermospas.com, tim@ninthlink.com";
   $from = "info@thermospas.com";
   $subject = "HT Form Submission";
   $headers = 'From: ThermoSpas <' . $from . '>' . "\r\n";
