@@ -25,7 +25,7 @@ $sql = "";
 $sql .= "INSERT INTO ht_form";
 $sql .= "(name, fname, lname, address1, city, state, zipcode, phone, email, comments, iref, ht_date)";
 $sql .= "VALUES";
-$sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', $iref , '" . date("Y-m-d") . "')";
+$sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', ".$iref." , '" . date("Y-m-d") . "')";
 
 if($conn->query($sql) === false) {
   trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
@@ -83,10 +83,11 @@ function _submit_to_sharpspring($data) {
 
 function _submit_to_leadperfect($data)
 {
-  $full_name = rtrim($_POST['Name']);
+  $full_name = rtrim($data['Name']);
   $name_arr = explode(' ', $full_name);
   $last_name = array_pop($name_arr);
   $first_name = implode(' ', $name_arr);
+  $iref = isset($data['iref']) && $data['iref'] != '' ? trim($data['iref']) : 'iDYO';
   
 	$comments = 'Model: ' . $data['Model'] . ', Jets: ' . $data['Jets'] . ', Shell: ' . $data['Shell'] . ', Cabinet: ' . $data['Cabinet'] . ', Options: ' . $data['Options']; // options are comma separated values
 	$array = array(
@@ -94,11 +95,11 @@ function _submit_to_leadperfect($data)
 	'Lname'      => $last_name,
 	'Address1'   => $data['Address'],
 	'Address2'   => '',
-	'City'       => $_POST['City'],
-	'State'      => $_POST['State'],
-	'Zipcode'    => $_POST['Zip'],
-	'Email'      => $_POST['Email'],
-	'Phone'      => $_POST['Phone'],
+	'City'       => $data['City'],
+	'State'      => $data['State'],
+	'Zipcode'    => $data['Zip'],
+	'Email'      => $data['Email'],
+	'Phone'      => $data['Phone'],
 	'Comments'   => $comments,
 	'Ht_date'    => '',
 	'Iref'       => 'IDYO',
