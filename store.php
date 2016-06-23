@@ -25,10 +25,9 @@ $sql = "";
 $sql .= "INSERT INTO ht_form ";
 $sql .= "(name, fname, lname, address1, city, state, zipcode, phone, email, comments, iref, ht_date) ";
 $sql .= "VALUES ";
-$sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', ".$iref." , '" . date("Y-m-d") . "')";
+$sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', '" . $iref . "', '" . date("Y-m-d") . "')";
 
 if($conn->query($sql) === false) {
-  trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
   // Send an Email!
   $to = "tim@ninthlink.com";
   $from = "info@thermospas.com";
@@ -52,6 +51,8 @@ if($conn->query($sql) === false) {
   $message .= "Options: " . $_POST['Options'] . "\r\n";
 
   mail($to, $subject, $message, $headers);
+
+  trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
 
 } else {
   $last_inserted_id = $conn->insert_id;
