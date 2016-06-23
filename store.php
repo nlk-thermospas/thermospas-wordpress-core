@@ -28,38 +28,13 @@ $sql .= "VALUES ";
 $sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', '" . $iref . "', '" . date("Y-m-d") . "')";
 
 if($conn->query($sql) === false) {
-  // Send an Email!
-  $to = "tim@ninthlink.com";
-  $from = "info@thermospas.com";
-  $subject = "HT Form Submission";
-  $headers = 'From: ThermoSpas <' . $from . '>' . "\r\n";
-  $message .= "SQL: " . $sql . "\r\n";
-  $message .= "Error: " . $conn->error . "\r\n";
-  $message .= "Source: DYO\r\n";
-  $message .= "Date & Time: " . date('F j, Y h:i:s A') . "\r\n";
-  $message .= "Name: " . $_POST['Name'] . "\r\n";
-  $message .= "Address: " . $_POST['Address'] . "\r\n";
-  $message .= "City: " . $_POST['City'] . "\r\n";
-  $message .= "State: " . $_POST['State'] . "\r\n";
-  $message .= "Zip: " . $_POST['Zip'] . "\r\n";
-  $message .= "Phone: " . $_POST['Phone'] . "\r\n";
-  $message .= "Email: " . $_POST['Email'] . "\r\n";
-  $message .= "Model: " . $_POST['Model'] . "\r\n";
-  $message .= "Jets: " . $_POST['Jets'] . "\r\n";
-  $message .= "Shell: " . $_POST['Shell'] . "\r\n";
-  $message .= "Cabinet: " . $_POST['Cabinet'] . "\r\n";
-  $message .= "Options: " . $_POST['Options'] . "\r\n";
-
-  mail($to, $subject, $message, $headers);
-
   trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
-
 } else {
   $last_inserted_id = $conn->insert_id;
   $affected_rows = $conn->affected_rows;
 
   // Send an Email!
-  $to = "web@thermospas.com, tim@ninthlink.com";
+  $to = "web@thermospas.com";
   $from = "info@thermospas.com";
   $subject = "HT Form Submission";
   $headers = 'From: ThermoSpas <' . $from . '>' . "\r\n";
