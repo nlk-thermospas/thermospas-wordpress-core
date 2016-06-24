@@ -101,8 +101,8 @@ function _submit_to_leadperfect($data)
 	'Email'      => $data['Email'],
 	'Phone'      => $data['Phone'],
 	'Comments'   => $comments,
-	'Ht_date'    => '',
-	'Iref'       => 'IDYO',
+	'Ht_date'    => date('F j, Y h:i:s A'),
+	'Iref'       => $iref,
 	);
 	
 	$url = 'http://dd33.leadperfection.com/batch/addleadsinternet.asp';
@@ -111,7 +111,17 @@ function _submit_to_leadperfect($data)
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	$response = curl_exec($ch);
 	curl_close($ch);
-		
+
+  // Send an Email!
+  $to = "tim@ninthlink.com";
+  $from = "info@thermospas.com";
+  $subject = "HT Form Submission to Lead Perfection";
+  $headers = 'From: ThermoSpas <' . $from . '>' . "\r\n";
+  $message = "URL: " . $url . "\r\n";
+  $message .= "Response: " . $response . "\r\n";
+
+  mail($to, $subject, $message, $headers);
+
 }
 
 ?>
