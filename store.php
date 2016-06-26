@@ -28,6 +28,9 @@ $sql .= "VALUES ";
 $sql .= "('" . $_POST['Name'] . "', '" . $first_name . "', '" . $last_name . "', '" . $_POST['Address'] . "', '" . $_POST['City'] . "', '" . $_POST['State'] . "', '" . $_POST['Zip'] . "', '" . $_POST['Phone'] . "', '" . $_POST['Email'] . "', '" . $comments . "', '" . $iref . "', '" . date("Y-m-d") . "')";
 
 if($conn->query($sql) === false) {
+  _submit_to_sharpspring($_POST);
+  _submit_to_leadperfect($_POST);
+  	
   trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
 } else {
   $last_inserted_id = $conn->insert_id;
