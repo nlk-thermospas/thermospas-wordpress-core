@@ -519,6 +519,11 @@ article.hot-tubs-lists ul li p.more a:hover {
 	width: 315px;
 }
 
+/*add margin to images to space out when they wrap onto next line*/
+.meta .swatches img {
+	margin-bottom: 10px;
+}
+
 
 
 
