@@ -392,8 +392,8 @@ footer ul.social li a:hover {}
 .gform_wrapper form .gform_body ul li select {
     padding: 0px 0px 0px 8px;
 }
-.gform_wrapper form .gform_body ul li.gfield_error input[type=text] {
-    border: 1px solid red;
+.gform_wrapper form .gform_body ul li.gfield_error input {
+    border: 1px solid red !important;
 }
 .gform_wrapper form input[type=submit],
 .gform_wrapper form input[type=button] {
