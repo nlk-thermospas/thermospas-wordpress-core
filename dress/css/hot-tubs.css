@@ -186,7 +186,9 @@ article .visuals .meta .swatches ul li img {
 	float: left;
 	width: 32px;
 	height: 32px;
-	margin-right: 10px
+	margin-right: 10px;
+	/*add margin to images to space out when they wrap onto next line*/
+	margin-bottom: 10px;
 }
 article .visuals .meta .swatches ul li:last-of-type img {
 	margin-right: 0px
@@ -517,11 +519,6 @@ article.hot-tubs-lists ul li p.more a:hover {
 	display: block;
 	float: left;
 	width: 315px;
-}
-
-/*add margin to images to space out when they wrap onto next line*/
-.meta .swatches img {
-	margin-bottom: 10px;
 }
 
 
