@@ -66,7 +66,8 @@ wp-config.php
 */wp-content/upgrade/
 */wp-content/uploads/
 */wp-content/wp-cache-config.php
-/wp-content/gallery
+*/wp-content/gallery
+*/wp-content/themes/
 */wp-content/themes/starkers-master/
 
 # More Specifics #
