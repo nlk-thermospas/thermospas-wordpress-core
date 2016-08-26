@@ -34,9 +34,10 @@ $insert = MySQL($dbname,$insertsql);
 
 $MessageSubject="Ask a Service Professional";
 
-$sendto="noreply@thermospas-mailer.com";
+$sendto="service@thermospas.com";
+$fromemail = "noreply@thermospas-mailer.com";
 
-$headers = 'From: '.$email.'' . "\r\n" .
+$headers = 'From: '.$fromemail.'' . "\r\n" .
 			'Reply-To: '.$email.'' . "\r\n" .
 			'X-Mailer: PHP/' . phpversion();
 
