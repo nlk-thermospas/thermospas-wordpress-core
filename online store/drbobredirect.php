@@ -34,7 +34,7 @@ $insert = MySQL($dbname,$insertsql);
 
 $MessageSubject="Ask a Service Professional";
 
-$sendto="service@thermospas.com";
+$sendto="noreply@thermospas-mailer.com";
 
 $headers = 'From: '.$email.'' . "\r\n" .
 			'Reply-To: '.$email.'' . "\r\n" .
