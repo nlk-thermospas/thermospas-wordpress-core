@@ -43,6 +43,7 @@ $headers = 'From: '.$fromemail.'' . "\r\n" .
 
 mail($sendto, $MessageSubject, $body, $headers);
 
+
 header( "Location: http://online.thermospas.com/Articles.asp?ID=145" );
 
 /*
